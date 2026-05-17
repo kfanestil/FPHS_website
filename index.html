@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fanny Pack Home Services — Honest Pros. Fair Price. Quality Work.</title>
+  <meta name="description" content="Fanny Pack Home Services offers quality handyman and home-services solutions from honest professionals at a reasonable price. Plumbing, electrical, lawn care, mounting, and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ================================================================
+       FANNY PACK HOME SERVICES — Design System Tokens
+       ================================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      /* Brand */
+      --brand-navy:        #2C3E50;
+      --brand-navy-deep:   #1F2D3A;
+      --brand-navy-soft:   #3D5670;
+      --brand-orange:      #ED7D31;
+      --brand-orange-deep: #C9621A;
+      --brand-orange-soft: #FBD9BD;
+
+      /* Canvas / Neutrals */
+      --bone:       #F8F5F0;
+      --bone-deep:  #EFEAE1;
+      --paper:      #FFFFFF;
+      --ink-900:    #1B232C;
+      --ink-700:    #3A4754;
+      --ink-500:    #6A7785;
+      --ink-300:    #A8B1BB;
+      --ink-200:    #D6DAE0;
+      --ink-100:    #EAEDF1;
+
+      /* Semantic */
+      --ok:       #2E8B57;
+      --ok-soft:  #DCEEE3;
+
+      /* Aliases */
+      --fg-1:       var(--ink-900);
+      --fg-2:       var(--ink-700);
+      --fg-3:       var(--ink-500);
+      --fg-on-navy: #F8F5F0;
+
+      /* Borders */
+      --line-1: #E4DFD4;
+      --line-2: #D6DAE0;
+
+      /* Type */
+      --font-display: "Archivo Black", "Helvetica Neue", Arial, sans-serif;
+      --font-body:    "DM Sans", "Helvetica Neue", Arial, sans-serif;
+      --font-mono:    "JetBrains Mono", ui-monospace, Menlo, monospace;
+
+      /* Type scale */
+      --t-display: clamp(46px, 6vw, 84px);
+      --t-h1:      clamp(34px, 4.5vw, 56px);
+      --t-h2:      clamp(26px, 3.2vw, 40px);
+      --t-h3:      22px;
+      --t-body:    16px;
+      --t-body-lg: 18px;
+      --t-small:   14px;
+      --t-micro:   12px;
+      --t-eyebrow: 13px;
+
+      /* Spacing — 8pt scale */
+      --s-1:  4px;  --s-2: 8px;   --s-3: 12px;
+      --s-4:  16px; --s-5: 24px;  --s-6: 32px;
+      --s-7:  48px; --s-8: 64px;  --s-9: 96px;  --s-10: 128px;
+
+      /* Radii */
+      --r-1: 4px; --r-2: 8px; --r-3: 12px; --r-4: 16px; --r-pill: 999px;
+
+      /* Shadows */
+      --shadow-1:     0 1px 0 rgba(28,35,44,.04), 0 1px 2px rgba(28,35,44,.06);
+      --shadow-2:     0 2px 0 rgba(28,35,44,.04), 0 6px 18px rgba(28,35,44,.08);
+      --shadow-3:     0 4px 0 rgba(28,35,44,.05), 0 18px 40px rgba(28,35,44,.12);
+      --shadow-press: inset 0 -3px 0 rgba(0,0,0,.18), 0 2px 0 rgba(0,0,0,.06);
+
+      /* Motion */
+      --ease-out:  cubic-bezier(.2,.8,.2,1);
+      --ease-snap: cubic-bezier(.4,1.4,.5,1);
+      --dur-1: 120ms;
+      --dur-2: 200ms;
+      --dur-3: 320ms;
+    }
+
+    /* ================================================================
+       BASE
+       ================================================================ */
+    html  { color: var(--fg-1); background: var(--bone); font-family: var(--font-body); scroll-behavior: smooth; }
+    body  { font-size: var(--t-body); line-height: 1.55; color: var(--fg-2); -webkit-font-smoothing: antialiased; background: var(--bone); }
+    a     { color: var(--brand-navy); }
+    img   { max-width: 100%; display: block; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 var(--s-5); }
+    section    { padding: var(--s-9) 0; }
+
+    /* ================================================================
+       SHARED COMPONENTS
+       ================================================================ */
+
+    /* Eyebrow label */
+    .eyebrow {
+      display: block;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: var(--t-eyebrow);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--brand-orange);
+      margin-bottom: var(--s-3);
+    }
+
+    /* Section header block */
+    .sec-head { margin-bottom: var(--s-7); }
+    .sec-head h2 {
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      font-size: var(--t-h2);
+      line-height: 1.05;
+      letter-spacing: -.005em;
+      color: var(--ink-900);
+      margin-bottom: var(--s-3);
+    }
+    .sec-head p {
+      font-size: var(--t-body-lg);
+      line-height: 1.5;
+      color: var(--ink-700);
+      max-width: 64ch;
+    }
+
+    /* Buttons */
+    .btn {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      border-radius: var(--r-pill);
+      padding: 14px 28px;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: background var(--dur-1) var(--ease-out),
+                  transform var(--dur-1) var(--ease-snap),
+                  box-shadow var(--dur-1) var(--ease-out);
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn:focus-visible { outline: 2px solid var(--brand-orange); outline-offset: 3px; }
+
+    .btn-primary  { background: var(--brand-orange); color: #fff; box-shadow: var(--shadow-press); }
+    .btn-primary:hover  { background: var(--brand-orange-deep); color: #fff; }
+    .btn-secondary { background: var(--brand-navy); color: var(--fg-on-navy); box-shadow: var(--shadow-press); }
+    .btn-secondary:hover { background: var(--brand-navy-deep); color: var(--fg-on-navy); }
+    .btn-ghost { background: transparent; color: var(--brand-navy); box-shadow: inset 0 0 0 1.5px var(--brand-navy); }
+    .btn-ghost:hover { background: rgba(44,62,80,.06); }
+
+    /* ================================================================
+       NAV
+       ================================================================ */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--brand-navy);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .nav-inner {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--s-5);
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: var(--s-3);
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .nav-mark {
+      width: 38px;
+      height: 38px;
+      background: var(--brand-orange);
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .nav-wordmark strong {
+      display: block;
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      font-size: 17px;
+      letter-spacing: .02em;
+      line-height: 1;
+      color: var(--fg-on-navy);
+    }
+    .nav-wordmark small {
+      display: block;
+      font-size: 10px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(248,245,240,.55);
+      margin-top: 3px;
+    }
+    .nav-links {
+      display: flex;
+      gap: var(--s-7);
+      list-style: none;
+      align-items: center;
+    }
+    .nav-links a {
+      color: var(--fg-on-navy);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      transition: color var(--dur-1) var(--ease-out);
+    }
+    .nav-links a:hover { color: var(--brand-orange); }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: var(--s-4);
+      flex-shrink: 0;
+    }
+    .nav-phone {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: rgba(248,245,240,.8);
+      text-decoration: none;
+      transition: color var(--dur-1);
+    }
+    .nav-phone:hover { color: var(--brand-orange); }
+
+    /* Hamburger */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--fg-on-navy);
+      cursor: pointer;
+      padding: 6px;
+      border-radius: var(--r-2);
+    }
+    .nav-toggle:hover { background: rgba(255,255,255,.08); }
+
+    /* Mobile menu */
+    .nav-mobile {
+      display: none;
+      background: var(--brand-navy-deep);
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+    .nav-mobile.open { display: block; }
+    .nav-mobile ul   { list-style: none; padding: var(--s-3) 0 var(--s-2); }
+    .nav-mobile a {
+      display: block;
+      padding: 14px var(--s-5);
+      color: var(--fg-on-navy);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+    }
+    .nav-mobile a:hover { color: var(--brand-orange); }
+    .nav-mobile .mobile-cta { padding: var(--s-2) var(--s-5) var(--s-4); }
+
+    /* ================================================================
+       HERO
+       ================================================================ */
+    .hero { padding: var(--s-9) 0; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: var(--s-8);
+      align-items: center;
+    }
+    .hero-text h1 {
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      font-size: var(--t-display);
+      line-height: .95;
+      letter-spacing: -.01em;
+      color: var(--ink-900);
+      margin-bottom: var(--s-5);
+    }
+    .hero-text h1 .hl {
+      background: linear-gradient(transparent 62%, var(--brand-orange-soft) 62%);
+      padding: 0 4px;
+    }
+    .hero-text .lede {
+      font-size: clamp(17px, 1.4vw, 20px);
+      line-height: 1.55;
+      color: var(--ink-700);
+      max-width: 52ch;
+      margin-bottom: var(--s-6);
+    }
+    .hero-cta-row {
+      display: flex;
+      gap: var(--s-3);
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: var(--s-7);
+    }
+    .hero-trust {
+      display: flex;
+      gap: var(--s-5);
+      flex-wrap: wrap;
+    }
+    .hero-trust .item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink-700);
+    }
+    .hero-trust .item svg { color: var(--brand-orange); }
+
+    /* Photo placeholder */
+    .photo-slot {
+      position: relative;
+      aspect-ratio: 5 / 6;
+      border-radius: var(--r-4);
+      overflow: hidden;
+      box-shadow: var(--shadow-2);
+      background: var(--bone-deep);
+    }
+    .photo-slot::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 30% 25%, #FBD9BD 0, transparent 45%),
+        radial-gradient(circle at 75% 80%, rgba(44,62,80,.18) 0, transparent 45%),
+        linear-gradient(135deg, #EFEAE1 0%, #D8D2C8 100%);
+    }
+    .photo-label {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--ink-500);
+      text-align: center;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .photo-badge {
+      position: absolute;
+      top: var(--s-5);
+      right: var(--s-5);
+      background: var(--brand-navy);
+      color: var(--fg-on-navy);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+    .photo-float {
+      position: absolute;
+      bottom: var(--s-5);
+      left: var(--s-5);
+      right: var(--s-5);
+      background: var(--paper);
+      border-radius: var(--r-3);
+      padding: 12px 14px;
+      box-shadow: var(--shadow-3);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 2;
+    }
+    .photo-float .avi {
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      background: var(--brand-orange);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 13px;
+      font-family: var(--font-body);
+      flex-shrink: 0;
+    }
+    .photo-float .info strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink-900);
+    }
+    .photo-float .info span {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      color: var(--ink-500);
+      margin-top: 2px;
+    }
+
+    /* ================================================================
+       SERVICES
+       ================================================================ */
+    .services { background: var(--bone); }
+
+    .svc-filter {
+      display: flex;
+      gap: var(--s-2);
+      flex-wrap: wrap;
+      margin-bottom: var(--s-5);
+    }
+    .svc-filter button {
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--line-1);
+      background: var(--bone);
+      color: var(--ink-700);
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      transition: background var(--dur-1) var(--ease-out),
+                  border-color var(--dur-1) var(--ease-out),
+                  color var(--dur-1) var(--ease-out);
+    }
+    .svc-filter button:hover { border-color: var(--brand-navy-soft); }
+    .svc-filter button.on    { background: var(--brand-navy); color: var(--fg-on-navy); border-color: var(--brand-navy); }
+    .svc-filter button:focus-visible { outline: 2px solid var(--brand-orange); outline-offset: 2px; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--s-4);
+    }
+    .service-card {
+      background: var(--paper);
+      border-radius: var(--r-4);
+      padding: var(--s-5);
+      box-shadow: var(--shadow-1);
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-3);
+      border: 1px solid transparent;
+      transition: transform var(--dur-1) var(--ease-out),
+                  box-shadow var(--dur-1) var(--ease-out),
+                  border-color var(--dur-1) var(--ease-out);
+    }
+    .service-card:hover   { transform: translateY(-2px); box-shadow: var(--shadow-2); border-color: var(--line-1); }
+    .service-card.hidden  { display: none; }
+    .service-card .ico {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--r-3);
+      background: var(--brand-orange-soft);
+      color: var(--brand-orange-deep);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .service-card h3 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 17px;
+      color: var(--ink-900);
+    }
+    .service-card p   { font-size: 14px; line-height: 1.5; color: var(--ink-700); flex: 1; }
+    .service-card .from {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--ink-500);
+    }
+
+    /* ================================================================
+       HOW IT WORKS
+       ================================================================ */
+    .how {
+      background: var(--paper);
+      border-top: 1px solid var(--line-1);
+      border-bottom: 1px solid var(--line-1);
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--s-7);
+    }
+    .step { display: flex; flex-direction: column; gap: var(--s-3); }
+    .step .num {
+      font-family: var(--font-display);
+      font-size: 80px;
+      line-height: 1;
+      color: var(--brand-orange);
+      letter-spacing: -.02em;
+    }
+    .step h3 {
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      font-size: 22px;
+      color: var(--ink-900);
+      line-height: 1.15;
+    }
+    .step p { font-size: 16px; line-height: 1.6; color: var(--ink-700); }
+
+    /* ================================================================
+       QUOTE FORM
+       ================================================================ */
+    .quote { background: var(--bone); }
+    .quote-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      background: var(--paper);
+      border-radius: var(--r-4);
+      box-shadow: var(--shadow-2);
+      padding: var(--s-7);
+    }
+    .quote-wrap > .eyebrow { margin-bottom: var(--s-2); }
+    .quote-wrap > h2 {
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      font-size: clamp(26px, 3vw, 36px);
+      line-height: 1.05;
+      color: var(--ink-900);
+      margin-bottom: var(--s-2);
+    }
+    .quote-wrap > .subline {
+      font-size: 16px;
+      color: var(--ink-700);
+      margin-bottom: var(--s-6);
+      border-bottom: 1px solid var(--line-1);
+      padding-bottom: var(--s-5);
+    }
+    .q-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-4); margin-bottom: var(--s-4); }
+    .q-grid.cols-1 { grid-template-columns: 1fr; }
+
+    .field { display: flex; flex-direction: column; gap: 6px; }
+    .field label { font-weight: 600; font-size: 13px; color: var(--ink-900); }
+    .field input,
+    .field textarea,
+    .field select {
+      font-family: var(--font-body);
+      font-size: 15px;
+      padding: 12px 14px;
+      border-radius: var(--r-2);
+      border: 1.5px solid var(--line-2);
+      background: var(--paper);
+      color: var(--fg-1);
+      outline: none;
+      transition: border-color var(--dur-1) var(--ease-out),
+                  box-shadow var(--dur-1) var(--ease-out);
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .field select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236A7785' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 42px;
+    }
+    .field textarea { resize: vertical; min-height: 100px; }
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus {
+      border-color: var(--brand-navy);
+      box-shadow: 0 0 0 3px rgba(237,125,49,.16);
+    }
+    .field input::placeholder,
+    .field textarea::placeholder { color: var(--ink-300); }
+    .field input[aria-invalid="true"],
+    .field textarea[aria-invalid="true"] { border-color: #C0392B; }
+
+    .q-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: var(--s-6);
+      gap: var(--s-4);
+      flex-wrap: wrap;
+    }
+    .q-footer .privacy {
+      font-size: 13px;
+      color: var(--ink-500);
+      max-width: 40ch;
+      line-height: 1.45;
+    }
+    .q-success {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: var(--s-4);
+      padding: var(--s-7) 0 var(--s-5);
+    }
+    .q-success.show { display: flex; }
+    .q-success .ok-ring {
+      width: 64px;
+      height: 64px;
+      border-radius: 999px;
+      background: var(--ok-soft);
+      color: var(--ok);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .q-success h3 {
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      font-size: 28px;
+      color: var(--ink-900);
+    }
+    .q-success p { color: var(--ink-700); max-width: 44ch; font-size: 16px; }
+
+    /* ================================================================
+       FOOTER
+       ================================================================ */
+    .footer {
+      background: var(--brand-navy-deep);
+      color: var(--fg-on-navy);
+      padding: var(--s-8) 0 var(--s-5);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: var(--s-7);
+      padding-bottom: var(--s-7);
+      border-bottom: 1px solid rgba(248,245,240,.1);
+      margin-bottom: var(--s-5);
+    }
+    .footer-brand .f-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      background: var(--brand-orange);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--s-3);
+    }
+    .footer-brand .f-wm {
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      font-size: 20px;
+      line-height: 1;
+      color: var(--fg-on-navy);
+      display: block;
+    }
+    .footer-brand .f-sub {
+      display: block;
+      font-size: 10px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(248,245,240,.5);
+      margin-top: 3px;
+    }
+    .footer-brand .blurb {
+      margin-top: var(--s-4);
+      font-size: 14px;
+      line-height: 1.6;
+      color: rgba(248,245,240,.62);
+      max-width: 34ch;
+    }
+    .footer-col h4 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--brand-orange);
+      margin-bottom: var(--s-4);
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col li a {
+      color: rgba(248,245,240,.72);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color var(--dur-1);
+    }
+    .footer-col li a:hover { color: var(--brand-orange); }
+    .footer-contact .phone {
+      font-family: var(--font-mono);
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--fg-on-navy);
+      text-decoration: none;
+      display: block;
+      margin-bottom: var(--s-2);
+    }
+    .footer-contact .phone:hover { color: var(--brand-orange); }
+    .footer-contact .area {
+      margin-top: var(--s-4);
+      font-size: 13px;
+      color: rgba(248,245,240,.45);
+      line-height: 1.5;
+    }
+    .footer-colophon {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: .04em;
+      color: rgba(248,245,240,.38);
+      flex-wrap: wrap;
+      gap: var(--s-3);
+    }
+    .footer-colophon a { color: rgba(248,245,240,.38); text-decoration: none; }
+    .footer-colophon a:hover { color: var(--brand-orange); }
+
+    /* ================================================================
+       RESPONSIVE
+       ================================================================ */
+    @media (max-width: 960px) {
+      .nav-links, .nav-phone { display: none; }
+      .nav-toggle { display: flex; }
+      .hero-grid  { grid-template-columns: 1fr; }
+      .hero-photo { display: none; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .steps-grid    { grid-template-columns: 1fr; gap: var(--s-5); }
+      .footer-grid   { grid-template-columns: 1fr 1fr; }
+      section        { padding: var(--s-7) 0; }
+    }
+    @media (max-width: 600px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .footer-grid   { grid-template-columns: 1fr; }
+      .hero-cta-row  { flex-direction: column; align-items: flex-start; }
+      .q-grid        { grid-template-columns: 1fr; }
+      .q-footer      { flex-direction: column; align-items: flex-start; }
+      .quote-wrap    { padding: var(--s-5); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================================================================
+       NAV
+       ================================================================ -->
+  <header>
+    <nav class="nav" id="site-nav" aria-label="Main navigation">
+      <div class="container">
+        <div class="nav-inner">
+          <a href="#hero" class="nav-brand" aria-label="Fanny Pack Home Services — home">
+            <div class="nav-mark" aria-hidden="true">
+              <i data-lucide="wrench" width="18" height="18"></i>
+            </div>
+            <div class="nav-wordmark">
+              <strong>Fanny Pack</strong>
+              <small>Home Services</small>
+            </div>
+          </a>
+
+          <ul class="nav-links" role="list">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#how-it-works">How it works</a></li>
+            <li><a href="#quote">Get a quote</a></li>
+          </ul>
+
+          <div class="nav-right">
+            <a href="tel:5551234567" class="nav-phone">(555) 123-4567</a>
+            <a href="#quote" class="btn btn-primary" style="padding: 10px 20px; font-size: 13px;">Get a quote</a>
+            <button class="nav-toggle" id="nav-toggle" aria-controls="nav-mobile" aria-expanded="false" aria-label="Open menu">
+              <i data-lucide="menu" width="22" height="22"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="nav-mobile" id="nav-mobile" aria-hidden="true">
+      <ul>
+        <li><a href="#services" class="mobile-link">Services</a></li>
+        <li><a href="#how-it-works" class="mobile-link">How it works</a></li>
+        <li><a href="#quote" class="mobile-link">Get a quote</a></li>
+        <li><a href="tel:5551234567" class="mobile-link">(555) 123-4567</a></li>
+      </ul>
+      <div class="mobile-cta">
+        <a href="#quote" class="btn btn-primary mobile-link" style="width:100%; justify-content:center;">Get a free estimate</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ================================================================
+         HERO
+         ================================================================ -->
+    <section class="hero" id="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-text">
+            <span class="eyebrow">Serving the greater [City] area</span>
+            <h1 id="hero-heading">
+              Your home,<br>
+              <span class="hl">fixed right.</span>
+            </h1>
+            <p class="lede">
+              We handle the honey-do list, the one-off repairs, and the jobs
+              you've been putting off. Call for a same-week estimate — no
+              upselling, no jargon, no surprises on the invoice.
+            </p>
+            <div class="hero-cta-row">
+              <a href="#quote" class="btn btn-primary">
+                <i data-lucide="clipboard-list" width="16" height="16"></i>
+                Get a free estimate
+              </a>
+              <a href="#services" class="btn btn-ghost">See our services</a>
+            </div>
+            <div class="hero-trust">
+              <div class="item">
+                <i data-lucide="shield-check" width="16" height="16"></i>
+                Licensed &amp; insured
+              </div>
+              <div class="item">
+                <i data-lucide="calendar-check" width="16" height="16"></i>
+                Same-week availability
+              </div>
+              <div class="item">
+                <i data-lucide="star" width="16" height="16"></i>
+                5-star rated
+              </div>
+              <div class="item">
+                <i data-lucide="badge-check" width="16" height="16"></i>
+                No hidden fees
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-photo" aria-hidden="true">
+            <div class="photo-slot">
+              <div class="photo-label">Photo — real work, real homes</div>
+              <div class="photo-badge">Available this week</div>
+              <div class="photo-float">
+                <div class="avi">JD</div>
+                <div class="info">
+                  <strong>Jake D. · Your tech</strong>
+                  <span>Est. arrival: 10:00 AM</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SERVICES
+         ================================================================ -->
+    <section class="services" id="services" aria-labelledby="services-heading">
+      <div class="container">
+        <div class="sec-head">
+          <span class="eyebrow">What we do</span>
+          <h2 id="services-heading">No job too small,<br>no quote too long.</h2>
+          <p>
+            From a dripping faucet to a full deck rebuild — we show up on time,
+            do the work right, and leave the place clean.
+          </p>
+        </div>
+
+        <!-- Filter pills -->
+        <div class="svc-filter" role="group" aria-label="Filter services by category">
+          <button class="on" data-filter="all">All services</button>
+          <button data-filter="indoor">Indoor</button>
+          <button data-filter="outdoor">Outdoor</button>
+          <button data-filter="maintenance">Maintenance</button>
+        </div>
+
+        <!-- Cards -->
+        <div class="services-grid" id="services-grid">
+
+          <article class="service-card" data-category="indoor">
+            <div class="ico" aria-hidden="true">
+              <i data-lucide="droplets" width="20" height="20"></i>
+            </div>
+            <h3>Plumbing</h3>
+            <p>Leaks, clogs, fixture swaps, water heaters. We'll find the problem and fix it — not upsell you on a new one.</p>
+            <div class="from">From $85/hr</div>
+          </article>
+
+          <article class="service-card" data-category="indoor">
+            <div class="ico" aria-hidden="true">
+              <i data-lucide="zap" width="20" height="20"></i>
+            </div>
+            <h3>Electrical</h3>
+            <p>Outlets, switches, ceiling fans, light fixtures. Permit-free residential work done safely and to code.</p>
+            <div class="from">From $85/hr</div>
+          </article>
+
+          <article class="service-card" data-category="indoor">
+            <div class="ico" aria-hidden="true">
+              <i data-lucide="hammer" width="20" height="20"></i>
+            </div>
+            <h3>Carpentry &amp; Drywall</h3>
+            <p>Patches, holes, trim, built-ins, shelving. We patch it so you can't tell, and build it to last.</p>
+            <div class="from">From $75/hr</div>
+          </article>
+
+          <article class="service-card" data-category="indoor">
+            <div class="ico" aria-hidden="true">
+              <i data-lucide="key" width="20" height="20"></i>
+            </div>
+            <h3>Doors &amp; Locks</h3>
+            <p>Installs, adjustments, rekeying, deadbolts. If it sticks, squeaks, or won't latch, we'll get it right.</p>
+            <div class="from">From $65</div>
+          </article>
+
+          <article class="service-card" data-category="indoor">
+            <div class="ico" aria-hidden="true">
+              <i data-lucide="monitor" width="20" height="20"></i>
+            </div>
+            <h3>Mounting &amp; Hanging</h3>
+            <p>TVs, mirrors, art, shelves, blinds. We find the studs, hang it level, and patch any previous holes.</p>
+            <div class="from">From $55</div>
+          </article>
+
+          <article class="service-card" data-category="outdoor">
+            <div class="ico" aria-hidden="true">
+              <i data-lucide="scissors" width="20" height="20"></i>
+            </div>
+            <h3>Lawn &amp; Trimming</h3>
+            <p>Mow, edge, trim, and haul. One-time clean-ups or regular maintenance — we work with what you've got.</p>
+            <div class="from">From $45</div>
+          </article>
+
+          <article class="service-card" data-category="outdoor">
+            <div class="ico" aria-hidden="true">
+              <i data-lucide="ruler" width="20" height="20"></i>
+            </div>
+            <h3>Decks &amp; Fences</h3>
+            <p>Repairs, new builds, staining, pressure-washing. Outdoor work done right so it holds up season after season.</p>
+            <div class="from">From $150</div>
+          </article>
+
+          <article class="service-card" data-category="maintenance">
+            <div class="ico" aria-hidden="true">
+              <i data-lucide="wrench" width="20" height="20"></i>
+            </div>
+            <h3>General Handyman</h3>
+            <p>The odd jobs, the to-do list, the "while you're here" work. If it needs doing and you'd rather not, call us.</p>
+            <div class="from">From $65/hr</div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         HOW IT WORKS
+         ================================================================ -->
+    <section class="how" id="how-it-works" aria-labelledby="how-heading">
+      <div class="container">
+        <div class="sec-head">
+          <span class="eyebrow">The process</span>
+          <h2 id="how-heading">Three steps.<br>Zero runaround.</h2>
+          <p>We keep it simple — call, get a straight quote, get it fixed. That's the whole thing.</p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step">
+            <div class="num" aria-hidden="true">01</div>
+            <h3>Call or book online</h3>
+            <p>
+              Give us a call or fill out the form below. Tell us what's going on.
+              We'll confirm your job and get a tech scheduled within the week —
+              usually sooner.
+            </p>
+          </div>
+          <div class="step">
+            <div class="num" aria-hidden="true">02</div>
+            <h3>We assess and quote</h3>
+            <p>
+              A pro shows up on time, takes a look at the job, and gives you
+              a straight estimate before any work starts. No pressure, no
+              upsell — just what it'll cost.
+            </p>
+          </div>
+          <div class="step">
+            <div class="num" aria-hidden="true">03</div>
+            <h3>Done and guaranteed</h3>
+            <p>
+              We do the work right, clean up after ourselves, and stand behind
+              every job. If something isn't right, we come back and fix it.
+              Simple as that.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         QUOTE FORM
+         ================================================================ -->
+    <section class="quote" id="quote" aria-labelledby="quote-heading">
+      <div class="container">
+        <div class="quote-wrap">
+          <span class="eyebrow">Free estimate</span>
+          <h2 id="quote-heading">Tell us what you need.</h2>
+          <p class="subline">
+            We'll reach out within one business day to confirm details and
+            schedule a visit. No commitment required.
+          </p>
+
+          <!-- Form (wire action="" to your backend endpoint) -->
+          <form id="quote-form" action="#" method="post" novalidate>
+
+            <div class="q-grid">
+              <div class="field">
+                <label for="fname">First name <span aria-hidden="true">*</span></label>
+                <input type="text" id="fname" name="fname" autocomplete="given-name" required placeholder="Sara">
+              </div>
+              <div class="field">
+                <label for="lname">Last name <span aria-hidden="true">*</span></label>
+                <input type="text" id="lname" name="lname" autocomplete="family-name" required placeholder="Johnson">
+              </div>
+            </div>
+
+            <div class="q-grid">
+              <div class="field">
+                <label for="phone">Phone <span aria-hidden="true">*</span></label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel" required placeholder="(555) 123-4567">
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" autocomplete="email" placeholder="sara@example.com">
+              </div>
+            </div>
+
+            <div class="q-grid" style="margin-bottom: var(--s-4);">
+              <div class="field">
+                <label for="service">Service type <span aria-hidden="true">*</span></label>
+                <select id="service" name="service" required>
+                  <option value="" disabled selected>Choose a service...</option>
+                  <optgroup label="Indoor">
+                    <option value="plumbing">Plumbing</option>
+                    <option value="electrical">Electrical</option>
+                    <option value="carpentry">Carpentry &amp; Drywall</option>
+                    <option value="doors">Doors &amp; Locks</option>
+                    <option value="mounting">Mounting &amp; Hanging</option>
+                    <option value="appliances">Appliances</option>
+                  </optgroup>
+                  <optgroup label="Outdoor">
+                    <option value="lawn">Lawn &amp; Trimming</option>
+                    <option value="decks">Decks &amp; Fences</option>
+                    <option value="pool">Pool Cleaning</option>
+                  </optgroup>
+                  <optgroup label="Maintenance &amp; Other">
+                    <option value="handyman">General Handyman</option>
+                    <option value="cleaning">Home Cleaning</option>
+                    <option value="remodel">Small Remodel</option>
+                    <option value="other">Other / not sure</option>
+                  </optgroup>
+                </select>
+              </div>
+              <div class="field">
+                <label for="timing">Preferred time window</label>
+                <select id="timing" name="timing">
+                  <option value="">Flexible / no preference</option>
+                  <option value="morning">Morning (8 AM – 12 PM)</option>
+                  <option value="afternoon">Afternoon (12 – 5 PM)</option>
+                  <option value="weekend">Weekend</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="q-grid cols-1" style="margin-bottom: 0;">
+              <div class="field">
+                <label for="address">Service address <span aria-hidden="true">*</span></label>
+                <input type="text" id="address" name="address" autocomplete="street-address" required placeholder="123 Main St, Orlando, FL 32801">
+              </div>
+            </div>
+
+            <div class="q-grid cols-1" style="margin-top: var(--s-4);">
+              <div class="field">
+                <label for="description">Describe the job <span aria-hidden="true">*</span></label>
+                <textarea id="description" name="description" required placeholder="Tell us what's going on — more detail means a faster, more accurate estimate."></textarea>
+              </div>
+            </div>
+
+            <div class="q-footer">
+              <p class="privacy">
+                Your info is only used to contact you about your request.
+                We don't sell data or send marketing spam.
+              </p>
+              <button type="submit" class="btn btn-primary">
+                <i data-lucide="send" width="16" height="16"></i>
+                Send my request
+              </button>
+            </div>
+
+          </form>
+
+          <!-- Success state -->
+          <div class="q-success" id="q-success" role="alert" aria-live="polite">
+            <div class="ok-ring" aria-hidden="true">
+              <i data-lucide="check" width="28" height="28"></i>
+            </div>
+            <h3>Request received.</h3>
+            <p>We'll be in touch within one business day to confirm your details and schedule a visit.</p>
+            <a href="tel:5551234567" class="btn btn-ghost">
+              <i data-lucide="phone" width="14" height="14"></i>
+              Or call us now
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================================================================
+       FOOTER
+       ================================================================ -->
+  <footer class="footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <div class="f-mark" aria-hidden="true">
+            <i data-lucide="wrench" width="20" height="20"></i>
+          </div>
+          <span class="f-wm">Fanny Pack</span>
+          <span class="f-sub">Home Services</span>
+          <p class="blurb">
+            Honest pros. Reasonable price. Quality work.
+            We show up when we say we will and fix it right the first time.
+          </p>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Plumbing</a></li>
+            <li><a href="#services">Electrical</a></li>
+            <li><a href="#services">Carpentry &amp; Drywall</a></li>
+            <li><a href="#services">Lawn &amp; Outdoor</a></li>
+            <li><a href="#services">General Handyman</a></li>
+          </ul>
+        </div>
+
+        <!-- Company -->
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">How it works</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-col footer-contact">
+          <h4>Contact</h4>
+          <a href="tel:5551234567" class="phone">(555) 123-4567</a>
+          <a href="mailto:hello@fannypackhs.com" class="email" style="color: rgba(248,245,240,.72); font-size: 14px; text-decoration: none;">hello@fannypackhs.com</a>
+          <p class="area">
+            Serving [City], [Suburb 1],<br>
+            [Suburb 2], and surrounding areas.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-colophon">
+        <span>&copy; <span id="year"></span> Fanny Pack Home Services LLC. All rights reserved.</span>
+        <span>
+          <a href="#">Privacy policy</a> &nbsp;&middot;&nbsp;
+          <a href="#">Terms of service</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================================================================
+       SCRIPTS
+       ================================================================ -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script>
+    /* ── Init icons ────────────────────────────────────── */
+    lucide.createIcons();
+
+    /* ── Footer year ───────────────────────────────────── */
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    /* ── Mobile nav toggle ─────────────────────────────── */
+    const toggle   = document.getElementById('nav-toggle');
+    const mobileNav = document.getElementById('nav-mobile');
+    const menuIcon  = toggle.querySelector('i');
+
+    toggle.addEventListener('click', () => {
+      const open = mobileNav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+      mobileNav.setAttribute('aria-hidden', !open);
+      menuIcon.setAttribute('data-lucide', open ? 'x' : 'menu');
+      lucide.createIcons();
+    });
+
+    // Close on mobile link click
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        mobileNav.setAttribute('aria-hidden', 'true');
+        menuIcon.setAttribute('data-lucide', 'menu');
+        lucide.createIcons();
+      });
+    });
+
+    /* ── Service filter pills ──────────────────────────── */
+    const filterBtns = document.querySelectorAll('.svc-filter button');
+    const cards      = document.querySelectorAll('.service-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('on'));
+        btn.classList.add('on');
+        const filter = btn.dataset.filter;
+        cards.forEach(card => {
+          const match = filter === 'all' || card.dataset.category === filter;
+          card.classList.toggle('hidden', !match);
+        });
+      });
+    });
+
+    /* ── Quote form ────────────────────────────────────── */
+    const form      = document.getElementById('quote-form');
+    const success   = document.getElementById('q-success');
+    const required  = form.querySelectorAll('[required]');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let valid = true;
+
+      required.forEach(field => {
+        if (!field.value.trim()) {
+          field.setAttribute('aria-invalid', 'true');
+          valid = false;
+        } else {
+          field.removeAttribute('aria-invalid');
+        }
+      });
+
+      if (!valid) {
+        const first = form.querySelector('[aria-invalid="true"]');
+        if (first) first.focus();
+        return;
+      }
+
+      // TODO: Replace this block with your backend submission (fetch/POST).
+      // On success, show the confirmation state below.
+      form.style.display = 'none';
+      success.classList.add('show');
+      success.querySelector('h3').focus();
+    });
+
+    // Clear invalid state on input
+    form.querySelectorAll('input, textarea, select').forEach(field => {
+      field.addEventListener('input', () => field.removeAttribute('aria-invalid'));
+    });
+  </script>
+</body>
+</html>
