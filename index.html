@@ -601,6 +601,25 @@
       max-width: 40ch;
       line-height: 1.45;
     }
+    /* Formspree field-level error spans */
+    .field-error {
+      font-size: 13px;
+      color: #C0392B;
+      min-height: 18px;
+      display: block;
+    }
+    /* Form-level error block */
+    .q-form-error {
+      font-size: 14px;
+      color: #C0392B;
+      margin-bottom: var(--s-4);
+      min-height: 0;
+    }
+    /* Formspree marks invalid fields with aria-invalid="true" */
+    .field input[aria-invalid="true"],
+    .field textarea[aria-invalid="true"],
+    .field select[aria-invalid="true"] { border-color: #C0392B; }
+
     .q-success {
       display: none;
       flex-direction: column;
@@ -1018,35 +1037,43 @@
             schedule a visit. No commitment required.
           </p>
 
-          <!-- Form (wire action="" to your backend endpoint) -->
-          <form id="quote-form" action="#" method="post" novalidate>
+          <!-- Form-level error (shown by Formspree Ajax on submission failure) -->
+          <div data-fs-error class="q-form-error" role="alert"></div>
+
+          <!-- Form -->
+          <form id="quote-form">
+            <input type="hidden" name="_subject" value="New estimate request — Fanny Pack Home Services">
 
             <div class="q-grid">
               <div class="field">
                 <label for="fname">First name <span aria-hidden="true">*</span></label>
-                <input type="text" id="fname" name="fname" autocomplete="given-name" required placeholder="Sara">
+                <input type="text" id="fname" name="fname" autocomplete="given-name" required placeholder="Sara" data-fs-field>
+                <span data-fs-error="fname" class="field-error"></span>
               </div>
               <div class="field">
                 <label for="lname">Last name <span aria-hidden="true">*</span></label>
-                <input type="text" id="lname" name="lname" autocomplete="family-name" required placeholder="Johnson">
+                <input type="text" id="lname" name="lname" autocomplete="family-name" required placeholder="Johnson" data-fs-field>
+                <span data-fs-error="lname" class="field-error"></span>
               </div>
             </div>
 
             <div class="q-grid">
               <div class="field">
                 <label for="phone">Phone <span aria-hidden="true">*</span></label>
-                <input type="tel" id="phone" name="phone" autocomplete="tel" required placeholder="(555) 123-4567">
+                <input type="tel" id="phone" name="phone" autocomplete="tel" required placeholder="(555) 123-4567" data-fs-field>
+                <span data-fs-error="phone" class="field-error"></span>
               </div>
               <div class="field">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" autocomplete="email" placeholder="sara@example.com">
+                <input type="email" id="email" name="email" autocomplete="email" placeholder="sara@example.com" data-fs-field>
+                <span data-fs-error="email" class="field-error"></span>
               </div>
             </div>
 
             <div class="q-grid" style="margin-bottom: var(--s-4);">
               <div class="field">
                 <label for="service">Service type <span aria-hidden="true">*</span></label>
-                <select id="service" name="service" required>
+                <select id="service" name="service" required data-fs-field>
                   <option value="" disabled selected>Choose a service...</option>
                   <optgroup label="Indoor">
                     <option value="plumbing">Plumbing</option>
@@ -1068,10 +1095,11 @@
                     <option value="other">Other / not sure</option>
                   </optgroup>
                 </select>
+                <span data-fs-error="service" class="field-error"></span>
               </div>
               <div class="field">
                 <label for="timing">Preferred time window</label>
-                <select id="timing" name="timing">
+                <select id="timing" name="timing" data-fs-field>
                   <option value="">Flexible / no preference</option>
                   <option value="morning">Morning (8 AM – 12 PM)</option>
                   <option value="afternoon">Afternoon (12 – 5 PM)</option>
@@ -1083,14 +1111,16 @@
             <div class="q-grid cols-1" style="margin-bottom: 0;">
               <div class="field">
                 <label for="address">Service address <span aria-hidden="true">*</span></label>
-                <input type="text" id="address" name="address" autocomplete="street-address" required placeholder="123 Main St, Orlando, FL 32801">
+                <input type="text" id="address" name="address" autocomplete="street-address" required placeholder="123 Main St, Orlando, FL 32801" data-fs-field>
+                <span data-fs-error="address" class="field-error"></span>
               </div>
             </div>
 
             <div class="q-grid cols-1" style="margin-top: var(--s-4);">
               <div class="field">
                 <label for="description">Describe the job <span aria-hidden="true">*</span></label>
-                <textarea id="description" name="description" required placeholder="Tell us what's going on — more detail means a faster, more accurate estimate."></textarea>
+                <textarea id="description" name="description" required placeholder="Tell us what's going on — more detail means a faster, more accurate estimate." data-fs-field></textarea>
+                <span data-fs-error="description" class="field-error"></span>
               </div>
             </div>
 
@@ -1099,7 +1129,7 @@
                 Your info is only used to contact you about your request.
                 We don't sell data or send marketing spam.
               </p>
-              <button type="submit" class="btn btn-primary">
+              <button type="submit" class="btn btn-primary" data-fs-submit-btn>
                 <i data-lucide="send" width="16" height="16"></i>
                 Send my request
               </button>
@@ -1107,8 +1137,8 @@
 
           </form>
 
-          <!-- Success state -->
-          <div class="q-success" id="q-success" role="alert" aria-live="polite">
+          <!-- Success state (shown by Formspree Ajax on successful submission) -->
+          <div data-fs-success class="q-success" role="alert" aria-live="polite">
             <div class="ok-ring" aria-hidden="true">
               <i data-lucide="check" width="28" height="28"></i>
             </div>
@@ -1195,6 +1225,7 @@
        SCRIPTS
        ================================================================ -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
   <script>
     /* ── Init icons ────────────────────────────────────── */
     lucide.createIcons();
@@ -1242,41 +1273,11 @@
       });
     });
 
-    /* ── Quote form ────────────────────────────────────── */
-    const form      = document.getElementById('quote-form');
-    const success   = document.getElementById('q-success');
-    const required  = form.querySelectorAll('[required]');
-
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      let valid = true;
-
-      required.forEach(field => {
-        if (!field.value.trim()) {
-          field.setAttribute('aria-invalid', 'true');
-          valid = false;
-        } else {
-          field.removeAttribute('aria-invalid');
-        }
-      });
-
-      if (!valid) {
-        const first = form.querySelector('[aria-invalid="true"]');
-        if (first) first.focus();
-        return;
-      }
-
-      // TODO: Replace this block with your backend submission (fetch/POST).
-      // On success, show the confirmation state below.
-      form.style.display = 'none';
-      success.classList.add('show');
-      success.querySelector('h3').focus();
-    });
-
-    // Clear invalid state on input
-    form.querySelectorAll('input, textarea, select').forEach(field => {
-      field.addEventListener('input', () => field.removeAttribute('aria-invalid'));
-    });
+    /* ── Formspree Ajax init ───────────────────────────── */
+    window.formspree = window.formspree || function () {
+      (formspree.q = formspree.q || []).push(arguments);
+    };
+    formspree('initForm', { formElement: '#quote-form', formId: 'meedqjka' });
   </script>
 </body>
 </html>
