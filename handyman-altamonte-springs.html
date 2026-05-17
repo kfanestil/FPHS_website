@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Handyman in Altamonte Springs, FL — Fanny Pack Home Services</title>
+  <meta name="description" content="Licensed handyman, home repair, lawn care & pool cleaning in Altamonte Springs, FL. Same-week estimates. Honest pricing, no surprises. Call (904) 468-7667.">
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://fanny-pack-home-services.pages.dev/handyman-altamonte-springs">
+  <meta property="og:title"       content="Handyman in Altamonte Springs, FL — Fanny Pack Home Services">
+  <meta property="og:description" content="Licensed handyman, home repair, lawn care & pool cleaning in Altamonte Springs, FL. Same-week estimates. Honest pricing, no surprises.">
+  <meta property="og:image"       content="https://fanny-pack-home-services.pages.dev/assets/logo-circle.png">
+  <link rel="canonical"           href="https://fanny-pack-home-services.pages.dev/handyman-altamonte-springs">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ================================================================
+       FANNY PACK HOME SERVICES — Design System Tokens
+       ================================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --brand-navy:        #2C3E50;
+      --brand-navy-deep:   #1F2D3A;
+      --brand-navy-soft:   #3D5670;
+      --brand-orange:      #ED7D31;
+      --brand-orange-deep: #C9621A;
+      --brand-orange-soft: #FBD9BD;
+      --bone:       #F8F5F0;
+      --bone-deep:  #EFEAE1;
+      --paper:      #FFFFFF;
+      --ink-900:    #1B232C;
+      --ink-700:    #3A4754;
+      --ink-500:    #6A7785;
+      --ink-300:    #A8B1BB;
+      --ink-200:    #D6DAE0;
+      --ink-100:    #EAEDF1;
+      --ok:       #2E8B57;
+      --ok-soft:  #DCEEE3;
+      --fg-1:       var(--ink-900);
+      --fg-2:       var(--ink-700);
+      --fg-3:       var(--ink-500);
+      --fg-on-navy: #F8F5F0;
+      --line-1: #E4DFD4;
+      --line-2: #D6DAE0;
+      --font-display: "Archivo Black", "Helvetica Neue", Arial, sans-serif;
+      --font-body:    "DM Sans", "Helvetica Neue", Arial, sans-serif;
+      --font-mono:    "JetBrains Mono", ui-monospace, Menlo, monospace;
+      --t-display: clamp(46px, 6vw, 84px);
+      --t-h1:      clamp(34px, 4.5vw, 56px);
+      --t-h2:      clamp(26px, 3.2vw, 40px);
+      --t-h3:      22px;
+      --t-body:    16px;
+      --t-body-lg: 18px;
+      --t-small:   14px;
+      --t-micro:   12px;
+      --t-eyebrow: 13px;
+      --s-1:  4px;  --s-2: 8px;   --s-3: 12px;
+      --s-4:  16px; --s-5: 24px;  --s-6: 32px;
+      --s-7:  48px; --s-8: 64px;  --s-9: 96px;  --s-10: 128px;
+      --r-1: 4px; --r-2: 8px; --r-3: 12px; --r-4: 16px; --r-pill: 999px;
+      --shadow-1:     0 1px 0 rgba(28,35,44,.04), 0 1px 2px rgba(28,35,44,.06);
+      --shadow-2:     0 2px 0 rgba(28,35,44,.04), 0 6px 18px rgba(28,35,44,.08);
+      --shadow-3:     0 4px 0 rgba(28,35,44,.05), 0 18px 40px rgba(28,35,44,.12);
+      --shadow-press: inset 0 -3px 0 rgba(0,0,0,.18), 0 2px 0 rgba(0,0,0,.06);
+      --ease-out:  cubic-bezier(.2,.8,.2,1);
+      --ease-snap: cubic-bezier(.4,1.4,.5,1);
+      --dur-1: 120ms; --dur-2: 200ms; --dur-3: 320ms;
+    }
+
+    html  { color: var(--fg-1); background: var(--bone); font-family: var(--font-body); scroll-behavior: smooth; }
+    body  { font-size: var(--t-body); line-height: 1.55; color: var(--fg-2); -webkit-font-smoothing: antialiased; background: var(--bone); }
+    a     { color: var(--brand-navy); }
+    img   { max-width: 100%; display: block; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 var(--s-5); }
+    section    { padding: var(--s-9) 0; }
+
+    .eyebrow {
+      display: block;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: var(--t-eyebrow);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--brand-orange);
+      margin-bottom: var(--s-3);
+    }
+
+    .sec-head { margin-bottom: var(--s-7); }
+    .sec-head h2 {
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      font-size: var(--t-h2);
+      line-height: 1.05;
+      letter-spacing: -.005em;
+      color: var(--ink-900);
+      margin-bottom: var(--s-3);
+    }
+    .sec-head p { font-size: var(--t-body-lg); line-height: 1.5; color: var(--ink-700); max-width: 64ch; }
+
+    /* Buttons */
+    .btn {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      border-radius: var(--r-pill);
+      padding: 14px 28px;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: background var(--dur-1) var(--ease-out), transform var(--dur-1) var(--ease-snap), box-shadow var(--dur-1) var(--ease-out);
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn:focus-visible { outline: 2px solid var(--brand-orange); outline-offset: 3px; }
+    .btn-primary  { background: var(--brand-orange); color: #fff; box-shadow: var(--shadow-press); }
+    .btn-primary:hover  { background: var(--brand-orange-deep); color: #fff; }
+    .btn-secondary { background: var(--brand-navy); color: var(--fg-on-navy); box-shadow: var(--shadow-press); }
+    .btn-secondary:hover { background: var(--brand-navy-deep); color: var(--fg-on-navy); }
+    .btn-ghost { background: transparent; color: var(--brand-navy); box-shadow: inset 0 0 0 1.5px var(--brand-navy); }
+    .btn-ghost:hover { background: rgba(44,62,80,.06); }
+    .btn-ghost-inv { background: transparent; color: var(--fg-on-navy); box-shadow: inset 0 0 0 1.5px rgba(248,245,240,.4); }
+    .btn-ghost-inv:hover { background: rgba(255,255,255,.08); color: var(--fg-on-navy); }
+
+    /* NAV */
+    .nav { position: sticky; top: 0; z-index: 100; background: var(--brand-navy); border-bottom: 1px solid rgba(255,255,255,.06); }
+    .nav-inner { height: 72px; display: flex; align-items: center; justify-content: space-between; gap: var(--s-5); }
+    .nav-brand { display: flex; align-items: center; gap: var(--s-3); text-decoration: none; flex-shrink: 0; }
+    .nav-mark { width: 38px; height: 38px; border-radius: 999px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .nav-wordmark strong { display: block; font-family: var(--font-display); text-transform: uppercase; font-size: 17px; letter-spacing: .02em; line-height: 1; color: var(--fg-on-navy); }
+    .nav-wordmark small { display: block; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: rgba(248,245,240,.55); margin-top: 3px; }
+    .nav-links { display: flex; gap: var(--s-7); list-style: none; align-items: center; }
+    .nav-links a { color: var(--fg-on-navy); text-decoration: none; font-weight: 600; font-size: 14px; transition: color var(--dur-1) var(--ease-out); }
+    .nav-links a:hover { color: var(--brand-orange); }
+    .nav-right { display: flex; align-items: center; gap: var(--s-4); flex-shrink: 0; }
+    .nav-phone { font-family: var(--font-mono); font-size: 13px; color: rgba(248,245,240,.8); text-decoration: none; transition: color var(--dur-1); }
+    .nav-phone:hover { color: var(--brand-orange); }
+    .nav-toggle { display: none; background: none; border: none; color: var(--fg-on-navy); cursor: pointer; padding: 6px; border-radius: var(--r-2); }
+    .nav-toggle:hover { background: rgba(255,255,255,.08); }
+    .nav-mobile { display: none; background: var(--brand-navy-deep); border-top: 1px solid rgba(255,255,255,.08); }
+    .nav-mobile.open { display: block; }
+    .nav-mobile ul { list-style: none; padding: var(--s-3) 0 var(--s-2); }
+    .nav-mobile a { display: block; padding: 14px var(--s-5); color: var(--fg-on-navy); text-decoration: none; font-weight: 600; font-size: 15px; }
+    .nav-mobile a:hover { color: var(--brand-orange); }
+    .nav-mobile .mobile-cta { padding: var(--s-2) var(--s-5) var(--s-4); }
+
+    /* LOCATION HERO */
+    .loc-hero { background: var(--brand-navy); padding: var(--s-9) 0; }
+    .loc-hero .eyebrow { color: var(--brand-orange); }
+    .loc-hero h1 {
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      font-size: var(--t-h1);
+      line-height: .98;
+      letter-spacing: -.01em;
+      color: var(--fg-on-navy);
+      margin-bottom: var(--s-5);
+      max-width: 18ch;
+    }
+    .loc-hero .lede {
+      font-size: clamp(17px, 1.4vw, 20px);
+      line-height: 1.55;
+      color: rgba(248,245,240,.82);
+      max-width: 52ch;
+      margin-bottom: var(--s-6);
+    }
+    .loc-hero-cta { display: flex; gap: var(--s-3); align-items: center; flex-wrap: wrap; margin-bottom: var(--s-7); }
+    .loc-trust { display: flex; gap: var(--s-5); flex-wrap: wrap; }
+    .loc-trust .item { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: rgba(248,245,240,.72); }
+    .loc-trust .item svg { color: var(--brand-orange); }
+
+    /* LOCATION INTRO */
+    .loc-intro { background: var(--bone); }
+    .loc-intro-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--s-9); align-items: start; }
+    .loc-intro-text h2 {
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      font-size: var(--t-h2);
+      line-height: 1.05;
+      color: var(--ink-900);
+      margin-bottom: var(--s-5);
+    }
+    .loc-intro-text p { font-size: var(--t-body-lg); line-height: 1.6; color: var(--ink-700); margin-bottom: var(--s-4); }
+    .loc-stats { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-4); }
+    .loc-stat { background: var(--bone-deep); border-radius: var(--r-4); padding: var(--s-5); }
+    .loc-stat .val { font-family: var(--font-display); font-size: 32px; color: var(--brand-navy); line-height: 1; margin-bottom: 6px; }
+    .loc-stat .label { font-size: var(--t-small); color: var(--ink-500); font-weight: 600; }
+
+    /* SERVICES */
+    .services { background: var(--bone-deep); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--s-4);
+    }
+    .service-card {
+      background: var(--paper);
+      border-radius: var(--r-4);
+      padding: var(--s-5);
+      box-shadow: var(--shadow-1);
+      border: 1px solid transparent;
+      transition: border-color var(--dur-2) var(--ease-out), box-shadow var(--dur-2) var(--ease-out), transform var(--dur-2) var(--ease-out);
+    }
+    .service-card:hover { border-color: var(--line-1); box-shadow: var(--shadow-2); transform: translateY(-2px); }
+    .service-card .ico { width: 40px; height: 40px; border-radius: var(--r-3); background: var(--brand-orange-soft); display: flex; align-items: center; justify-content: center; margin-bottom: var(--s-4); color: var(--brand-orange-deep); flex-shrink: 0; }
+    .service-card h3 { font-size: var(--t-h3); font-weight: 700; color: var(--ink-900); margin-bottom: var(--s-2); }
+    .service-card p { font-size: 14px; line-height: 1.55; color: var(--ink-500); margin-bottom: var(--s-3); }
+    .service-card .from { font-family: var(--font-mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--brand-navy); font-weight: 500; }
+
+    /* LOCAL MAP */
+    .loc-map { background: var(--bone); }
+    .loc-map-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-8); align-items: start; }
+    .loc-map-copy h2 {
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      font-size: var(--t-h2);
+      line-height: 1.05;
+      color: var(--ink-900);
+      margin-bottom: var(--s-5);
+    }
+    .loc-map-copy p { font-size: var(--t-body-lg); line-height: 1.6; color: var(--ink-700); margin-bottom: var(--s-4); }
+    .loc-map-frame { border-radius: var(--r-4); overflow: hidden; box-shadow: var(--shadow-2); aspect-ratio: 4 / 3; }
+    .loc-map-frame iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+    /* QUOTE FORM */
+    .quote { background: var(--brand-navy-deep); }
+    .quote-wrap { background: var(--bone); border-radius: var(--r-4); padding: var(--s-8); box-shadow: var(--shadow-3); max-width: 780px; margin: 0 auto; }
+    .quote-wrap .eyebrow { color: var(--brand-orange); }
+    .quote-wrap h2 { font-family: var(--font-display); text-transform: uppercase; font-size: var(--t-h2); color: var(--ink-900); margin-bottom: var(--s-3); }
+    .quote-wrap .subline { font-size: var(--t-body-lg); color: var(--ink-700); margin-bottom: var(--s-6); }
+    .q-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-4); margin-bottom: var(--s-4); }
+    .q-grid.cols-1 { grid-template-columns: 1fr; }
+    .field { display: flex; flex-direction: column; gap: var(--s-1); }
+    .field label { font-size: 13px; font-weight: 700; letter-spacing: .02em; color: var(--ink-700); }
+    .field label span { color: var(--brand-orange); }
+    .field input, .field select, .field textarea {
+      font-family: var(--font-body);
+      font-size: var(--t-body);
+      color: var(--ink-900);
+      background: var(--paper);
+      border: 1.5px solid var(--line-2);
+      border-radius: var(--r-2);
+      padding: 10px 14px;
+      outline: none;
+      transition: border-color var(--dur-1) var(--ease-out), box-shadow var(--dur-1) var(--ease-out);
+      appearance: none;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      border-color: var(--brand-navy);
+      box-shadow: 0 0 0 3px rgba(44,62,80,.1);
+    }
+    .field textarea { min-height: 110px; resize: vertical; }
+    .field-error { font-size: var(--t-small); color: #C0392B; font-weight: 600; min-height: 18px; display: block; }
+    .q-form-error { background: #F7D9D5; border-radius: var(--r-2); padding: var(--s-3) var(--s-4); font-size: 14px; color: #8B1C12; font-weight: 600; margin-bottom: var(--s-4); display: none; }
+    .q-form-error:not(:empty) { display: block; }
+    .q-footer { display: flex; justify-content: space-between; align-items: center; margin-top: var(--s-5); gap: var(--s-4); flex-wrap: wrap; }
+    .privacy { font-size: 12px; color: var(--ink-500); max-width: 36ch; line-height: 1.5; }
+    .q-success { display: none; text-align: center; padding: var(--s-8) var(--s-5); }
+    [data-fs-success] { display: none; }
+    .ok-ring { width: 64px; height: 64px; border-radius: 999px; background: var(--ok-soft); display: flex; align-items: center; justify-content: center; margin: 0 auto var(--s-4); color: var(--ok); }
+    .q-success h3 { font-size: var(--t-h3); color: var(--ink-900); margin-bottom: var(--s-3); }
+    .q-success p { color: var(--ink-700); margin-bottom: var(--s-5); }
+
+    /* FOOTER */
+    .footer { background: var(--brand-navy-deep); padding: var(--s-9) 0 var(--s-7); }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.4fr; gap: var(--s-8); padding-bottom: var(--s-7); border-bottom: 1px solid rgba(255,255,255,.08); margin-bottom: var(--s-6); }
+    .footer-brand .f-mark { width: 44px; height: 44px; border-radius: 999px; background: var(--brand-orange); display: flex; align-items: center; justify-content: center; color: #fff; margin-bottom: var(--s-3); }
+    .footer-brand .f-wm { display: block; font-family: var(--font-display); text-transform: uppercase; font-size: 18px; letter-spacing: .02em; color: var(--fg-on-navy); line-height: 1; }
+    .footer-brand .f-sub { display: block; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: rgba(248,245,240,.45); margin-top: 4px; margin-bottom: var(--s-4); }
+    .footer-brand .blurb { font-size: 14px; line-height: 1.6; color: rgba(248,245,240,.62); max-width: 34ch; }
+    .footer-col h4 { font-family: var(--font-body); font-weight: 700; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--brand-orange); margin-bottom: var(--s-4); }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col li a { color: rgba(248,245,240,.72); text-decoration: none; font-size: 14px; transition: color var(--dur-1); }
+    .footer-col li a:hover { color: var(--brand-orange); }
+    .footer-contact .phone { font-family: var(--font-mono); font-size: 17px; font-weight: 500; color: var(--fg-on-navy); text-decoration: none; display: block; margin-bottom: var(--s-2); }
+    .footer-contact .phone:hover { color: var(--brand-orange); }
+    .footer-contact .area { margin-top: var(--s-4); font-size: 13px; color: rgba(248,245,240,.45); line-height: 1.5; }
+    .footer-colophon { display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 12px; letter-spacing: .04em; color: rgba(248,245,240,.38); flex-wrap: wrap; gap: var(--s-3); }
+    .footer-colophon a { color: rgba(248,245,240,.38); text-decoration: none; }
+    .footer-colophon a:hover { color: var(--brand-orange); }
+
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
+      .nav-links, .nav-phone { display: none; }
+      .nav-toggle { display: flex; }
+      .loc-intro-grid { grid-template-columns: 1fr; }
+      .loc-stats { grid-template-columns: repeat(2, 1fr); }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .loc-map-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      section { padding: var(--s-7) 0; }
+    }
+    @media (max-width: 600px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .loc-hero-cta { flex-direction: column; align-items: flex-start; }
+      .q-grid { grid-template-columns: 1fr; }
+      .q-footer { flex-direction: column; align-items: flex-start; }
+      .quote-wrap { padding: var(--s-5); }
+      .loc-stats { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+
+  <!-- LocalBusiness JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "Fanny Pack Home Services",
+    "url": "https://fanny-pack-home-services.pages.dev/handyman-altamonte-springs",
+    "telephone": "+19044687667",
+    "email": "hello@fannypackhs.com",
+    "image": "https://fanny-pack-home-services.pages.dev/assets/logo-circle.png",
+    "description": "Licensed handyman, home repair, lawn care and pool cleaning in Altamonte Springs, FL. Same-week estimates, honest pricing.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Altamonte Springs",
+      "addressRegion": "FL",
+      "addressCountry": "US"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Altamonte Springs" },
+      { "@type": "City", "name": "Casselberry" },
+      { "@type": "City", "name": "Forest City" },
+      { "@type": "City", "name": "Winter Springs" }
+    ],
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "15:00" }
+    ],
+    "priceRange": "$$",
+    "sameAs": []
+  }
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header>
+    <nav class="nav" id="site-nav" aria-label="Main navigation">
+      <div class="container">
+        <div class="nav-inner">
+          <a href="/" class="nav-brand" aria-label="Fanny Pack Home Services — home">
+            <div class="nav-mark" aria-hidden="true">
+              <img src="assets/logo-circle.png" alt="" width="38" height="38" style="border-radius:999px;object-fit:cover;display:block;">
+            </div>
+            <div class="nav-wordmark">
+              <strong>Fanny Pack</strong>
+              <small>Home Services</small>
+            </div>
+          </a>
+
+          <ul class="nav-links" role="list">
+            <li><a href="#services">Services</a></li>
+            <li><a href="/#how-it-works">How it works</a></li>
+            <li><a href="#quote">Get a quote</a></li>
+          </ul>
+
+          <div class="nav-right">
+            <a href="tel:9044687667" class="nav-phone">(904) 468-7667</a>
+            <a href="#quote" class="btn btn-primary" style="padding: 10px 20px; font-size: 13px;">Get a quote</a>
+            <button class="nav-toggle" id="nav-toggle" aria-controls="nav-mobile" aria-expanded="false" aria-label="Open menu">
+              <i data-lucide="menu" width="22" height="22"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="nav-mobile" id="nav-mobile" aria-hidden="true">
+      <ul>
+        <li><a href="#services" class="mobile-link">Services</a></li>
+        <li><a href="/#how-it-works" class="mobile-link">How it works</a></li>
+        <li><a href="#quote" class="mobile-link">Get a quote</a></li>
+        <li><a href="tel:9044687667" class="mobile-link">(904) 468-7667</a></li>
+      </ul>
+      <div class="mobile-cta">
+        <a href="#quote" class="btn btn-primary mobile-link" style="width:100%; justify-content:center;">Get a free estimate</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- LOCATION HERO -->
+    <section class="loc-hero" aria-labelledby="loc-heading">
+      <div class="container">
+        <span class="eyebrow">Serving Altamonte Springs &amp; Seminole County</span>
+        <h1 id="loc-heading">Handyman<br>services in<br>Altamonte<br>Springs, FL</h1>
+        <p class="lede">
+          From the 436 corridor to Cranes Roost — licensed pros who show up
+          on time, quote it straight, and fix it right. Same-week availability.
+        </p>
+        <div class="loc-hero-cta">
+          <a href="#quote" class="btn btn-primary">
+            <i data-lucide="clipboard-list" width="16" height="16"></i>
+            Get a free estimate
+          </a>
+          <a href="tel:9044687667" class="btn btn-ghost-inv">
+            <i data-lucide="phone" width="16" height="16"></i>
+            (904) 468-7667
+          </a>
+        </div>
+        <div class="loc-trust">
+          <div class="item"><i data-lucide="shield-check" width="16" height="16"></i> Licensed &amp; insured</div>
+          <div class="item"><i data-lucide="calendar-check" width="16" height="16"></i> Same-week availability</div>
+          <div class="item"><i data-lucide="badge-check" width="16" height="16"></i> No hidden fees</div>
+          <div class="item"><i data-lucide="map-pin" width="16" height="16"></i> Local to Seminole County</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATION INTRO -->
+    <section class="loc-intro" aria-labelledby="intro-heading">
+      <div class="container">
+        <div class="loc-intro-grid">
+          <div class="loc-intro-text">
+            <h2 id="intro-heading">We know<br>Altamonte Springs.</h2>
+            <p>
+              Altamonte Springs packs a lot of housing variety into a small city. You've got
+              mid-century ranch homes near Spring Valley, newer townhome communities along
+              the 436 corridor, and condo buildings within walking distance of Cranes Roost
+              Park. Each one has its own quirks — and that's exactly where we come in.
+            </p>
+            <p>
+              Whether it's a door that won't latch in a 1970s ranch, a leaking faucet in
+              a condo that shares walls with your neighbors, or a lawn that got away from
+              you during the wet season — we know this area and the kind of work that comes
+              up here. We carry general liability insurance and pull permits on any job that
+              requires one, so you're covered from start to finish.
+            </p>
+            <p>
+              We work throughout Altamonte Springs and the surrounding Seminole County
+              communities including Forest City, Casselberry, and Winter Springs. Call for
+              a same-week estimate — no travel fees within our service area.
+            </p>
+            <a href="#quote" class="btn btn-secondary" style="margin-top: var(--s-5);">
+              <i data-lucide="clipboard-list" width="16" height="16"></i>
+              Request an estimate
+            </a>
+          </div>
+          <div class="loc-stats" aria-hidden="true">
+            <div class="loc-stat">
+              <div class="val">24hr</div>
+              <div class="label">Response time</div>
+            </div>
+            <div class="loc-stat">
+              <div class="val">5★</div>
+              <div class="label">Rated locally</div>
+            </div>
+            <div class="loc-stat">
+              <div class="val">$0</div>
+              <div class="label">Hidden fees</div>
+            </div>
+            <div class="loc-stat">
+              <div class="val">1 wk</div>
+              <div class="label">Avg. scheduling</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services" aria-labelledby="services-heading">
+      <div class="container">
+        <div class="sec-head">
+          <span class="eyebrow">What we do in Altamonte Springs</span>
+          <h2 id="services-heading">Every service.<br>One honest quote.</h2>
+          <p>
+            From a dripping faucet to a full deck repair — we show up, fix it right,
+            and leave the place clean. Here's what we handle in Altamonte Springs.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="ico" aria-hidden="true"><i data-lucide="droplets" width="20" height="20"></i></div>
+            <h3>Plumbing</h3>
+            <p>Leaks, clogs, fixture swaps, water heaters. We'll find the problem and fix it — not upsell you on a new one.</p>
+            <div class="from">From $85/hr</div>
+          </article>
+          <article class="service-card">
+            <div class="ico" aria-hidden="true"><i data-lucide="zap" width="20" height="20"></i></div>
+            <h3>Electrical</h3>
+            <p>Outlets, switches, ceiling fans, light fixtures. Permit-free residential work done safely and to code.</p>
+            <div class="from">From $85/hr</div>
+          </article>
+          <article class="service-card">
+            <div class="ico" aria-hidden="true"><i data-lucide="hammer" width="20" height="20"></i></div>
+            <h3>Carpentry &amp; Drywall</h3>
+            <p>Patches, holes, trim, built-ins, shelving. We patch it so you can't tell, and build it to last.</p>
+            <div class="from">From $75/hr</div>
+          </article>
+          <article class="service-card">
+            <div class="ico" aria-hidden="true"><i data-lucide="key" width="20" height="20"></i></div>
+            <h3>Doors &amp; Locks</h3>
+            <p>Installs, adjustments, rekeying, deadbolts. If it sticks, squeaks, or won't latch, we'll get it right.</p>
+            <div class="from">From $65</div>
+          </article>
+          <article class="service-card">
+            <div class="ico" aria-hidden="true"><i data-lucide="monitor" width="20" height="20"></i></div>
+            <h3>Mounting &amp; Hanging</h3>
+            <p>TVs, mirrors, art, shelves, blinds. We find the studs, hang it level, and patch any previous holes.</p>
+            <div class="from">From $55</div>
+          </article>
+          <article class="service-card">
+            <div class="ico" aria-hidden="true"><i data-lucide="scissors" width="20" height="20"></i></div>
+            <h3>Lawn &amp; Trimming</h3>
+            <p>Mow, edge, trim, and haul. One-time clean-ups or regular maintenance — we work with what you've got.</p>
+            <div class="from">From $45</div>
+          </article>
+          <article class="service-card">
+            <div class="ico" aria-hidden="true"><i data-lucide="ruler" width="20" height="20"></i></div>
+            <h3>Decks &amp; Fences</h3>
+            <p>Repairs, new builds, staining, pressure-washing. Outdoor work done right so it holds up season after season.</p>
+            <div class="from">From $150</div>
+          </article>
+          <article class="service-card">
+            <div class="ico" aria-hidden="true"><i data-lucide="wrench" width="20" height="20"></i></div>
+            <h3>General Handyman</h3>
+            <p>The odd jobs, the to-do list, the "while you're here" work. If it needs doing and you'd rather not, call us.</p>
+            <div class="from">From $65/hr</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCAL MAP -->
+    <section class="loc-map" aria-labelledby="map-heading">
+      <div class="container">
+        <div class="loc-map-grid">
+          <div class="loc-map-copy">
+            <span class="eyebrow">Service area</span>
+            <h2 id="map-heading">We're in your<br>neighborhood.</h2>
+            <p>
+              Altamonte Springs sits in the heart of Seminole County, bordered by I-4 to
+              the west and SR-436 cutting through the center. If you're in the 32701 or
+              32714 zip code, we're already working in your area most weeks.
+            </p>
+            <p>
+              We know the neighborhoods — from the townhome communities near Altamonte
+              Mall to the older residential streets north of Lake Orienta. No matter
+              where you are in Altamonte, you'll get the same honest estimate and the
+              same quality work. No extra charges for driving to your part of town.
+            </p>
+            <a href="tel:9044687667" class="btn btn-primary" style="margin-top: var(--s-5);">
+              <i data-lucide="phone" width="16" height="16"></i>
+              Call (904) 468-7667
+            </a>
+          </div>
+          <div class="loc-map-frame" aria-label="Map of Altamonte Springs, FL">
+            <iframe
+              src="https://maps.google.com/maps?q=Altamonte+Springs,+FL&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              title="Altamonte Springs, Florida service area map"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUOTE FORM -->
+    <section class="quote" id="quote" aria-labelledby="quote-heading">
+      <div class="container">
+        <div class="quote-wrap">
+          <span class="eyebrow">Free estimate — Altamonte Springs</span>
+          <h2 id="quote-heading">Tell us what you need.</h2>
+          <p class="subline">
+            We'll reach out within one business day to confirm details and schedule
+            a visit. No commitment required.
+          </p>
+
+          <div data-fs-error class="q-form-error" role="alert"></div>
+
+          <form id="quote-form">
+            <input type="hidden" name="_subject" value="New estimate request — Altamonte Springs">
+            <input type="hidden" name="location" value="Altamonte Springs, FL">
+
+            <div class="q-grid">
+              <div class="field">
+                <label for="fname">First name <span aria-hidden="true">*</span></label>
+                <input type="text" id="fname" name="fname" autocomplete="given-name" required placeholder="Sara" data-fs-field>
+                <span data-fs-error="fname" class="field-error"></span>
+              </div>
+              <div class="field">
+                <label for="lname">Last name <span aria-hidden="true">*</span></label>
+                <input type="text" id="lname" name="lname" autocomplete="family-name" required placeholder="Johnson" data-fs-field>
+                <span data-fs-error="lname" class="field-error"></span>
+              </div>
+            </div>
+
+            <div class="q-grid">
+              <div class="field">
+                <label for="phone">Phone <span aria-hidden="true">*</span></label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel" required placeholder="(555) 123-4567" data-fs-field>
+                <span data-fs-error="phone" class="field-error"></span>
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" autocomplete="email" placeholder="sara@example.com" data-fs-field>
+                <span data-fs-error="email" class="field-error"></span>
+              </div>
+            </div>
+
+            <div class="q-grid" style="margin-bottom: var(--s-4);">
+              <div class="field">
+                <label for="service">Service type <span aria-hidden="true">*</span></label>
+                <select id="service" name="service" required data-fs-field>
+                  <option value="" disabled selected>Choose a service...</option>
+                  <optgroup label="Indoor">
+                    <option value="plumbing">Plumbing</option>
+                    <option value="electrical">Electrical</option>
+                    <option value="carpentry">Carpentry &amp; Drywall</option>
+                    <option value="doors">Doors &amp; Locks</option>
+                    <option value="mounting">Mounting &amp; Hanging</option>
+                    <option value="appliances">Appliances</option>
+                  </optgroup>
+                  <optgroup label="Outdoor">
+                    <option value="lawn">Lawn &amp; Trimming</option>
+                    <option value="decks">Decks &amp; Fences</option>
+                    <option value="pool">Pool Cleaning</option>
+                  </optgroup>
+                  <optgroup label="Maintenance &amp; Other">
+                    <option value="handyman">General Handyman</option>
+                    <option value="cleaning">Home Cleaning</option>
+                    <option value="remodel">Small Remodel</option>
+                    <option value="other">Other / not sure</option>
+                  </optgroup>
+                </select>
+                <span data-fs-error="service" class="field-error"></span>
+              </div>
+              <div class="field">
+                <label for="timing">Preferred time window</label>
+                <select id="timing" name="timing" data-fs-field>
+                  <option value="">Flexible / no preference</option>
+                  <option value="morning">Morning (8 AM – 12 PM)</option>
+                  <option value="afternoon">Afternoon (12 – 5 PM)</option>
+                  <option value="weekend">Weekend</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="q-grid cols-1" style="margin-bottom: 0;">
+              <div class="field">
+                <label for="address">Service address <span aria-hidden="true">*</span></label>
+                <input type="text" id="address" name="address" autocomplete="street-address" required placeholder="123 Main St, Altamonte Springs, FL 32701" data-fs-field>
+                <span data-fs-error="address" class="field-error"></span>
+              </div>
+            </div>
+
+            <div class="q-grid cols-1" style="margin-top: var(--s-4);">
+              <div class="field">
+                <label for="description">Describe the job <span aria-hidden="true">*</span></label>
+                <textarea id="description" name="description" required placeholder="Tell us what's going on — more detail means a faster, more accurate estimate." data-fs-field></textarea>
+                <span data-fs-error="description" class="field-error"></span>
+              </div>
+            </div>
+
+            <div class="q-footer">
+              <p class="privacy">Your info is only used to contact you about your request. We don't sell data or send marketing spam.</p>
+              <button type="submit" class="btn btn-primary" data-fs-submit-btn>
+                <i data-lucide="send" width="16" height="16"></i>
+                Send my request
+              </button>
+            </div>
+          </form>
+
+          <div data-fs-success class="q-success" role="alert" aria-live="polite">
+            <div class="ok-ring" aria-hidden="true"><i data-lucide="check" width="28" height="28"></i></div>
+            <h3>Request received.</h3>
+            <p>We'll be in touch within one business day to confirm your details and schedule a visit.</p>
+            <a href="tel:9044687667" class="btn btn-ghost">
+              <i data-lucide="phone" width="14" height="14"></i>
+              Or call us now
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="f-mark" aria-hidden="true"><i data-lucide="wrench" width="20" height="20"></i></div>
+          <span class="f-wm">Fanny Pack</span>
+          <span class="f-sub">Home Services</span>
+          <p class="blurb">Honest pros. Reasonable price. Quality work. We show up when we say we will and fix it right the first time.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Plumbing</a></li>
+            <li><a href="#services">Electrical</a></li>
+            <li><a href="#services">Carpentry &amp; Drywall</a></li>
+            <li><a href="#services">Lawn &amp; Outdoor</a></li>
+            <li><a href="#services">General Handyman</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Service areas</h4>
+          <ul>
+            <li><a href="/">Orlando</a></li>
+            <li><a href="/handyman-altamonte-springs">Altamonte Springs</a></li>
+            <li><a href="/handyman-sanford">Sanford</a></li>
+            <li><a href="/">Central Florida</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-contact">
+          <h4>Contact</h4>
+          <a href="tel:9044687667" class="phone">(904) 468-7667</a>
+          <a href="mailto:hello@fannypackhs.com" style="color: rgba(248,245,240,.72); font-size: 14px; text-decoration: none;">hello@fannypackhs.com</a>
+          <p class="area">Serving Orlando, Altamonte Springs,<br>Sanford, and the surrounding areas.</p>
+        </div>
+      </div>
+      <div class="footer-colophon">
+        <span>&copy; <span id="year"></span> Fanny Pack Home Services LLC. All rights reserved.</span>
+        <span><a href="#">Privacy policy</a> &nbsp;&middot;&nbsp; <a href="#">Terms of service</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+  <script>
+    lucide.createIcons();
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const toggle    = document.getElementById('nav-toggle');
+    const mobileNav = document.getElementById('nav-mobile');
+    const menuIcon  = toggle.querySelector('i');
+    toggle.addEventListener('click', () => {
+      const open = mobileNav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+      mobileNav.setAttribute('aria-hidden', !open);
+      menuIcon.setAttribute('data-lucide', open ? 'x' : 'menu');
+      lucide.createIcons();
+    });
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        mobileNav.setAttribute('aria-hidden', 'true');
+        menuIcon.setAttribute('data-lucide', 'menu');
+        lucide.createIcons();
+      });
+    });
+
+    window.formspree = window.formspree || function () {
+      (formspree.q = formspree.q || []).push(arguments);
+    };
+    formspree('initForm', { formElement: '#quote-form', formId: 'meedqjka' });
+  </script>
+</body>
+</html>
