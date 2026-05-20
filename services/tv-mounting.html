@@ -132,9 +132,11 @@
     @media (max-width: 960px) { .nav-links, .nav-phone { display: none; } .nav-toggle { display: flex; } .svc-intro-grid { grid-template-columns: 1fr; } .inc-grid { grid-template-columns: repeat(2, 1fr); } .footer-grid { grid-template-columns: 1fr 1fr; } section { padding: var(--s-7) 0; } }
     @media (max-width: 600px) { .inc-grid { grid-template-columns: 1fr; } .footer-grid { grid-template-columns: 1fr; } .svc-hero-cta { flex-direction: column; align-items: flex-start; } .q-grid { grid-template-columns: 1fr; } .q-footer { flex-direction: column; align-items: flex-start; } .quote-wrap { padding: var(--s-5); } }
     .job-photo-strip { background: var(--bone-deep); border-top: 1px solid var(--line-1); border-bottom: 1px solid var(--line-1); padding: var(--s-7) 0; }
+    .job-photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-5); }
     .job-photo-fig { margin: 0; border-radius: var(--r-4); overflow: hidden; box-shadow: var(--shadow-1); }
-    .job-photo-fig img { width: 100%; max-height: 480px; object-fit: cover; display: block; }
+    .job-photo-fig img { width: 100%; height: 320px; object-fit: cover; object-position: center; display: block; }
     .job-photo-fig figcaption { background: var(--paper); padding: var(--s-3) var(--s-5); font-size: 13px; font-family: var(--font-body); color: var(--ink-500); font-weight: 600; letter-spacing: .02em; }
+    @media (max-width: 600px) { .job-photo-grid { grid-template-columns: 1fr; } }
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Fanny Pack Home Services","url":"https://fannypackhomeservices.com/services/tv-mounting","telephone":"+19044687667","email":"hello@fannypackhs.com","image":"https://fannypackhomeservices.com/assets/logo-circle.png","description":"TV mounting in Orlando, FL. Drywall, concrete block, and brick. Cable management included. Same-week estimates.","address":{"@type":"PostalAddress","streetAddress":"931 N. State Road 434, Suite 1201","addressLocality":"Altamonte Springs","addressRegion":"FL","postalCode":"32714","addressCountry":"US"},"areaServed":{"@type":"City","name":"Orlando"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"TV Mounting","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"TV Mounting Orlando FL"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"TV Wall Mount Installation"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Cable Management and Cord Hiding"}}]},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"15:00"}],"priceRange":"$$"}
@@ -233,6 +235,26 @@
         </div>
       </div>
     </section>
+    <!-- Job photos -->
+    <section class="job-photo-strip" aria-label="Recent TV mounting work">
+      <div class="container">
+        <div class="job-photo-grid">
+          <figure class="job-photo-fig">
+            <img src="../assets/photos/tv-mount-prep.jpg"
+                 alt="Wall prep for TV mount install — wood backing boards and cable routing next to fireplace surround"
+                 loading="lazy" width="900" height="1200">
+            <figcaption>Wall prep — backing boards installed, outlet relocated, cable drop staged</figcaption>
+          </figure>
+          <figure class="job-photo-fig">
+            <img src="../assets/photos/tv-mount-complete.jpg"
+                 alt="TV mounted above fireplace with built-in shelving on either side, completed by Fanny Pack Home Services"
+                 loading="lazy" width="1200" height="900">
+            <figcaption>Completed install — TV centered above fireplace, cables fully hidden</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <section class="faq" aria-labelledby="faq-heading">
       <div class="container">
         <span class="eyebrow">Common questions</span>
