@@ -423,14 +423,22 @@
       box-shadow: var(--shadow-2);
       background: var(--bone-deep);
     }
+    .photo-slot img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
+    }
     .photo-slot::before {
       content: "";
       position: absolute;
       inset: 0;
-      background:
-        radial-gradient(circle at 30% 25%, #FBD9BD 0, transparent 45%),
-        radial-gradient(circle at 75% 80%, rgba(44,62,80,.18) 0, transparent 45%),
-        linear-gradient(135deg, #EFEAE1 0%, #D8D2C8 100%);
+      background: linear-gradient(to top, rgba(0,0,0,.48) 0%, transparent 55%);
+      z-index: 1;
+      pointer-events: none;
     }
     .photo-label {
       position: absolute;
@@ -995,7 +1003,9 @@
 
           <div class="hero-photo" aria-hidden="true">
             <div class="photo-slot">
-              <div class="photo-label">Photo — real work, real homes</div>
+              <img src="assets/photos/deck-complete.jpg"
+                   alt="Completed composite deck built by Fanny Pack Home Services in Central Florida"
+                   width="1200" height="900" loading="eager">
               <div class="photo-badge">Available this week</div>
               <div class="photo-float">
                 <div class="avi">JD</div>
