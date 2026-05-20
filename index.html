@@ -856,6 +856,45 @@
       .q-footer      { flex-direction: column; align-items: flex-start; }
       .quote-wrap    { padding: var(--s-5); }
     }
+
+    /* Our Work gallery */
+    .gallery { background: var(--bone-deep); border-top: 1px solid var(--line-1); }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--s-5);
+    }
+    .gallery-item {
+      border-radius: var(--r-4);
+      overflow: hidden;
+      border: 1px solid var(--line-1);
+      box-shadow: var(--shadow-1);
+      background: var(--paper);
+    }
+    .gallery-item img {
+      display: block;
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.04); }
+    .gallery-caption {
+      padding: var(--s-3) var(--s-4);
+      font-size: 13px;
+      font-family: var(--font-body);
+      font-weight: 600;
+      color: var(--ink-700);
+      letter-spacing: .02em;
+    }
+    @media (max-width: 960px) {
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-item img { height: 200px; }
+    }
+    @media (max-width: 600px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-item img { height: 220px; }
+    }
   </style>
 </head>
 <body>
@@ -1110,6 +1149,57 @@
               every job. If something isn't right, we come back and fix it.
               Simple as that.
             </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         OUR WORK
+         ================================================================ -->
+    <section class="gallery" id="our-work" aria-labelledby="gallery-heading">
+      <div class="container">
+        <div class="sec-head">
+          <span class="eyebrow">Real jobs. Real results.</span>
+          <h2 id="gallery-heading">Work we stand behind.</h2>
+          <p>Every photo below is a job our crew completed. No stock photos, no renderings.</p>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="assets/photos/deck-complete.jpg"
+                 alt="Completed composite deck with built-in steps, Central Florida"
+                 loading="lazy" width="1200" height="900">
+            <div class="gallery-caption">Composite deck build</div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/photos/treehouse-complete.jpg"
+                 alt="Custom treehouse platform completed in a Central Florida backyard"
+                 loading="lazy" width="1200" height="900">
+            <div class="gallery-caption">Custom treehouse build</div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/photos/bathroom-vanity.jpg"
+                 alt="Modern bathroom remodel with black fixtures and vessel sink"
+                 loading="lazy" width="1200" height="900">
+            <div class="gallery-caption">Bathroom fixture install</div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/photos/bedroom-accent-wall.jpg"
+                 alt="Wood slat accent wall installed behind bed with ceiling fan"
+                 loading="lazy" width="1200" height="900">
+            <div class="gallery-caption">Wood slat accent wall</div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/photos/kitchen-faucet.jpg"
+                 alt="Chrome kitchen faucet installed on a double stainless steel sink"
+                 loading="lazy" width="1200" height="900">
+            <div class="gallery-caption">Kitchen faucet install</div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/photos/closet-organizer.jpg"
+                 alt="Custom closet organizer with pull-out drawer inserts installed"
+                 loading="lazy" width="1200" height="900">
+            <div class="gallery-caption">Closet organizer install</div>
           </div>
         </div>
       </div>
