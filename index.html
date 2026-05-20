@@ -423,7 +423,7 @@
       box-shadow: var(--shadow-2);
       background: var(--bone-deep);
     }
-    .photo-slot img {
+    .photo-slide {
       position: absolute;
       inset: 0;
       width: 100%;
@@ -431,7 +431,10 @@
       object-fit: cover;
       object-position: center;
       z-index: 0;
+      opacity: 0;
+      transition: opacity 0.9s ease;
     }
+    .photo-slide.active { opacity: 1; }
     .photo-slot::before {
       content: "";
       position: absolute;
@@ -1003,9 +1006,24 @@
 
           <div class="hero-photo" aria-hidden="true">
             <div class="photo-slot">
-              <img src="assets/photos/deck-complete.jpg"
-                   alt="Completed composite deck built by Fanny Pack Home Services in Central Florida"
-                   width="1200" height="900" loading="eager">
+              <img class="photo-slide active" src="assets/photos/deck-complete.jpg"
+                   alt="Completed composite deck, Central Florida" width="1200" height="900" loading="eager">
+              <img class="photo-slide" src="assets/photos/treehouse-complete.jpg"
+                   alt="Custom treehouse build, Central Florida" width="1200" height="900" loading="lazy">
+              <img class="photo-slide" src="assets/photos/bathroom-vanity.jpg"
+                   alt="Modern bathroom fixture install with vessel sink" width="900" height="1200" loading="lazy">
+              <img class="photo-slide" src="assets/photos/bedroom-accent-wall.jpg"
+                   alt="Wood slat accent wall carpentry" width="900" height="1200" loading="lazy">
+              <img class="photo-slide" src="assets/photos/kitchen-faucet.jpg"
+                   alt="Kitchen faucet installation" width="1200" height="900" loading="lazy">
+              <img class="photo-slide" src="assets/photos/closet-organizer.jpg"
+                   alt="Custom closet organizer install" width="900" height="1200" loading="lazy">
+              <img class="photo-slide" src="assets/photos/bathroom-hardware.jpg"
+                   alt="Black matte bathroom hardware mounted on marble tile" width="1200" height="900" loading="lazy">
+              <img class="photo-slide" src="assets/photos/door-closer.jpg"
+                   alt="Hydraulic door closer installed on screen door" width="1200" height="900" loading="lazy">
+              <img class="photo-slide" src="assets/photos/treehouse-build.jpg"
+                   alt="Treehouse platform under construction" width="1200" height="900" loading="lazy">
               <div class="photo-badge">Available this week</div>
               <div class="photo-float">
                 <div class="avi">JD</div>
@@ -1491,6 +1509,20 @@
       (formspree.q = formspree.q || []).push(arguments);
     };
     formspree('initForm', { formElement: '#quote-form', formId: 'meedqjka' });
+  </script>
+
+  <script>
+    /* Hero photo carousel */
+    (function () {
+      var slides = document.querySelectorAll('.photo-slide');
+      if (slides.length < 2) return;
+      var idx = 0;
+      setInterval(function () {
+        slides[idx].classList.remove('active');
+        idx = (idx + 1) % slides.length;
+        slides[idx].classList.add('active');
+      }, 4500);
+    })();
   </script>
 </body>
 </html>
