@@ -1,4 +1,31 @@
+# Fanny Pack Home Services — robots.txt
+
+# Allow all crawlers
 User-agent: *
 Allow: /
 
+# AI search crawlers — explicitly allowed for search indexing and citation
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Sitemap
 Sitemap: https://fannypackhomeservices.com/sitemap.xml
+
+# LLM context files
+# https://fannypackhomeservices.com/llms.txt
+# https://fannypackhomeservices.com/llms-full.txt

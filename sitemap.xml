@@ -4,9 +4,17 @@
   <!-- Homepage -->
   <url>
     <loc>https://fannypackhomeservices.com/</loc>
-    <lastmod>2026-05-19</lastmod>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+
+  <!-- FAQ -->
+  <url>
+    <loc>https://fannypackhomeservices.com/faq</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <!-- Root location pages -->
