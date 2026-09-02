@@ -17,6 +17,12 @@
  * 1,000. With CACHE_TTL_SECONDS at six hours this runs about 120 calls a
  * month, inside the free allowance.
  *
+ * Status codes: upstream and configuration failures return 424 rather
+ * than 5xx. Cloudflare's edge replaces a 5xx returned by a Function with
+ * its own error page, which discards the JSON body. 424 keeps
+ * response.ok false so the front end still falls back to static cards,
+ * and keeps the body readable.
+ *
  * Caching: Google's Places API policies prohibit storing Places content
  * beyond the allowed exceptions. A short refresh window is the
  * conservative posture. Do not raise CACHE_TTL_SECONDS into days and do
@@ -45,7 +51,7 @@ export async function onRequestGet(context) {
     // The front end gates on response.ok and falls back to static markup.
     return json(
       { error: 'GOOGLE_PLACES_API_KEY or GOOGLE_PLACE_ID is not bound' },
-      500
+      424
     );
   }
 
@@ -77,15 +83,19 @@ export async function onRequestGet(context) {
     );
   } catch (err) {
     console.log('reviews: upstream fetch threw:', err && err.message);
-    return json({ error: 'upstream request failed' }, 502);
+    return json({ error: 'upstream request failed' }, 424);
   }
 
   if (!upstream.ok) {
     const body = await upstream.text();
     console.log('reviews: upstream', upstream.status, body.slice(0, 500));
     return json(
-      { error: 'places api error', status: upstream.status },
-      502
+      {
+        error: 'places api error',
+        status: upstream.status,
+        detail: body.slice(0, 300),
+      },
+      424
     );
   }
 
