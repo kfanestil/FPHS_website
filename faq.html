@@ -177,12 +177,53 @@
     .mobile-link { color: var(--fg-on-navy); text-decoration: none; font-size: 18px; font-weight: 500; }
     .mobile-cta { margin-top: var(--s-5); }
 
-    /* BUTTONS */
-    .btn { display: inline-flex; align-items: center; gap: var(--s-2); padding: 12px 24px; border-radius: var(--r-pill); font-family: var(--font-body); font-weight: 600; font-size: 14px; text-decoration: none; cursor: pointer; border: none; transition: background var(--dur-1), transform var(--dur-1), box-shadow var(--dur-1); }
-    .btn-primary { background: var(--brand-orange); color: #fff; box-shadow: 0 2px 8px rgba(237,125,49,.35); }
-    .btn-primary:hover { background: var(--brand-orange-deep); transform: translateY(-1px); }
-    .btn-secondary { background: var(--brand-navy); color: var(--fg-on-navy); }
-    .btn-secondary:hover { background: var(--brand-navy-deep); transform: translateY(-1px); }
+    /* BUTTONS — Premium easing & micro-interactions */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--s-2);
+      padding: 12px 24px;
+      border-radius: var(--r-pill);
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: background 200ms cubic-bezier(.23,1,.32,1), transform 200ms cubic-bezier(.23,1,.32,1), box-shadow 200ms cubic-bezier(.23,1,.32,1);
+      position: relative;
+      overflow: hidden;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn:active { transform: scale(0.96); }
+    .btn-primary {
+      background: var(--brand-orange);
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(237,125,49,.35);
+    }
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,.2);
+      opacity: 0;
+      transition: opacity 200ms ease-out;
+      pointer-events: none;
+    }
+    .btn-primary:hover {
+      background: var(--brand-orange-deep);
+      box-shadow: 0 4px 16px rgba(237,125,49,.4);
+    }
+    .btn-primary:hover::before { opacity: 1; }
+    .btn-secondary {
+      background: var(--brand-navy);
+      color: var(--fg-on-navy);
+      box-shadow: 0 2px 8px rgba(44,62,80,.2);
+    }
+    .btn-secondary:hover {
+      background: var(--brand-navy-deep);
+      box-shadow: 0 4px 16px rgba(44,62,80,.3);
+    }
 
     /* HERO */
     .faq-hero {
@@ -309,6 +350,35 @@
     .footer-colophon { display: flex; justify-content: space-between; align-items: center; font-size: 12px; letter-spacing: .04em; color: rgba(248,245,240,.38); flex-wrap: wrap; gap: var(--s-3); }
     .footer-colophon a { color: rgba(248,245,240,.38); text-decoration: none; }
     .footer-colophon a:hover { color: var(--brand-orange); }
+
+    /* Scroll-triggered animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 320ms cubic-bezier(.23,1,.32,1) forwards;
+      opacity: 0;
+    }
+
+    .delay-1 { animation-delay: 0ms; }
+    .delay-2 { animation-delay: 80ms; }
+    .delay-3 { animation-delay: 160ms; }
+    .delay-4 { animation-delay: 240ms; }
+
+    .faq-item {
+      transition: opacity 300ms ease-out, transform 300ms cubic-bezier(.23,1,.32,1);
+    }
+    .faq-item:hover {
+      transform: translateY(-2px);
+    }
 
     @media (max-width: 960px) {
       .nav-links, .nav-phone { display: none; }
@@ -645,6 +715,28 @@
         mobile.setAttribute('aria-hidden', true);
       });
     });
+
+    /* Scroll-triggered animations */
+    (function () {
+      if (!('IntersectionObserver' in window)) return;
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+            entry.target.classList.add('animated');
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
+
+      document.querySelectorAll('.faq-item').forEach(function(el, idx) {
+        el.classList.add('fade-in-up', 'delay-' + ((idx % 4) + 1));
+        observer.observe(el);
+      });
+
+      document.querySelectorAll('.faq-section').forEach(function(el, idx) {
+        el.classList.add('fade-in-up', 'delay-' + ((idx % 4) + 1));
+        observer.observe(el);
+      });
+    })();
   </script>
 
 </body>
