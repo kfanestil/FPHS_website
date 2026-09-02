@@ -692,6 +692,76 @@
     }
 
     /* ================================================================
+       TESTIMONIALS
+       ================================================================ */
+    .testimonials { background: var(--brand-navy); }
+    .testimonials .sec-head h2 { color: var(--fg-on-navy); }
+    .testimonials .sec-head p  { color: rgba(248, 245, 240, .78); }
+    .testimonials .eyebrow     { color: var(--brand-orange); }
+
+    .t-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--s-5);
+    }
+    .t-card {
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid rgba(255, 255, 255, .08);
+      border-radius: var(--r-4);
+      padding: var(--s-5);
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-4);
+      min-height: 240px;
+    }
+    .t-stars {
+      color: var(--brand-orange);
+      letter-spacing: 4px;
+      font-size: 18px;
+      line-height: 1;
+    }
+    .t-quote {
+      font-size: 16px;
+      line-height: 1.55;
+      color: var(--fg-on-navy);
+      flex: 1;
+      margin: 0;
+    }
+    .t-author { display: flex; align-items: center; gap: 12px; }
+    .t-author .avi {
+      width: 36px;
+      height: 36px;
+      flex: 0 0 36px;
+      border-radius: var(--r-pill);
+      background: var(--brand-orange);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 13px;
+      overflow: hidden;
+    }
+    .t-author .avi img { width: 100%; height: 100%; object-fit: cover; }
+    .t-author .who { display: flex; flex-direction: column; min-width: 0; }
+    .t-author .name { font-weight: 700; font-size: 14px; color: var(--fg-on-navy); }
+    .t-author .where {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: rgba(248, 245, 240, .6);
+    }
+    .t-author a.name:hover { text-decoration: underline; }
+    .t-note {
+      margin: var(--s-5) 0 0;
+      font-size: 12px;
+      line-height: 1.6;
+      color: rgba(248, 245, 240, .55);
+    }
+    .t-note a { color: rgba(248, 245, 240, .8); text-decoration: underline; }
+
+    /* ================================================================
        QUOTE FORM
        ================================================================ */
     .quote { background: var(--bone); }
@@ -957,6 +1027,7 @@
       .hero-photo { display: none; }
       .services-grid { grid-template-columns: repeat(2, 1fr); }
       .steps-grid    { grid-template-columns: 1fr; gap: var(--s-5); }
+      .t-grid        { grid-template-columns: 1fr; }
       .footer-grid   { grid-template-columns: 1fr 1fr; }
       section        { padding: var(--s-7) 0; }
     }
@@ -1096,6 +1167,7 @@
           <ul class="nav-links" role="list">
             <li><a href="#services">Services</a></li>
             <li><a href="#how-it-works">How it works</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
             <li><a href="#quote">Get a quote</a></li>
           </ul>
 
@@ -1115,6 +1187,7 @@
       <ul>
         <li><a href="#services" class="mobile-link">Services</a></li>
         <li><a href="#how-it-works" class="mobile-link">How it works</a></li>
+        <li><a href="#testimonials" class="mobile-link">Reviews</a></li>
         <li><a href="#quote" class="mobile-link">Get a quote</a></li>
         <li><a href="tel:9044687667" class="mobile-link">(904) 468-7667</a></li>
       </ul>
@@ -1422,6 +1495,61 @@
             <div class="gallery-caption">Treehouse — mid-build</div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         TESTIMONIALS
+         ================================================================ -->
+    <section class="testimonials" id="testimonials" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <div class="sec-head">
+          <span class="eyebrow">Straight from customers</span>
+          <h2 id="testimonials-heading">Honest work.<br>Honest reviews.</h2>
+          <p>Every review below was left on our Google Business Profile by a real customer after a real job.</p>
+        </div>
+
+        <div class="t-grid" id="t-grid">
+          <div class="t-card">
+            <div class="t-stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="t-quote">&ldquo;I've been looking for a great handyman for quite some time. Finally found Fanny Pack Home Services, who were right on with an estimate, punctual, professional and knowledgeable in their work.&rdquo;</p>
+            <div class="t-author">
+              <div class="avi" aria-hidden="true">CC</div>
+              <div class="who">
+                <span class="name">Cheryl Cummings</span>
+                <span class="where">Google Review</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="t-card">
+            <div class="t-stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="t-quote">&ldquo;Honest and professional. No hidden fees or inflated quotes.&rdquo;</p>
+            <div class="t-author">
+              <div class="avi" aria-hidden="true">MA</div>
+              <div class="who">
+                <span class="name">Michelle Adams</span>
+                <span class="where">Google Review</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="t-card">
+            <div class="t-stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="t-quote">&ldquo;Amazing work and done in a very efficient manner.&rdquo;</p>
+            <div class="t-author">
+              <div class="avi" aria-hidden="true">HP</div>
+              <div class="who">
+                <span class="name">Holvens Pierre</span>
+                <span class="where">Google Review</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Populated only when REVIEWS_LIVE is true. Google's Places
+             attribution policy requires disclosing how reviews are ordered. -->
+        <p class="t-note" id="t-note" hidden></p>
       </div>
     </section>
 
@@ -1747,6 +1875,81 @@
         observer.observe(el);
       });
     })();
+
+    /* ── Google reviews ────────────────────────────────────
+       REVIEWS_LIVE is false while the Google Business Profile is verified
+       but not yet published to Maps. With no live place there is no Place
+       ID, so /api/reviews cannot resolve one and the cards above stay as
+       written. Flip this to true once the listing resolves on Google Maps
+       and GOOGLE_PLACE_ID is set in the Cloudflare dashboard. Nothing else
+       needs to change.
+       ──────────────────────────────────────────────────── */
+    const REVIEWS_LIVE = false;
+
+    async function loadGoogleReviews() {
+      const grid = document.getElementById('t-grid');
+      const note = document.getElementById('t-note');
+      if (!grid) return;
+
+      let data;
+      try {
+        const res = await fetch('/api/reviews', { headers: { accept: 'application/json' } });
+        // Gate on the status code. A failure must not be parsed out of a
+        // 200 body, and a failure here must leave the static cards alone.
+        if (!res.ok) return;
+        data = await res.json();
+      } catch (err) {
+        return;
+      }
+
+      if (!data || !Array.isArray(data.reviews) || data.reviews.length === 0) return;
+
+      const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      }[c]));
+
+      const initials = (name) => String(name || '')
+        .split(/\s+/).filter(Boolean).slice(0, 2)
+        .map((p) => p[0].toUpperCase()).join('');
+
+      grid.innerHTML = data.reviews.map((r) => {
+        const stars = '\u2605'.repeat(r.rating || 5);
+        const avi = r.authorPhotoUri
+          ? '<img src="' + esc(r.authorPhotoUri) + '" alt="" loading="lazy" width="36" height="36">'
+          : esc(initials(r.authorName));
+        const nameEl = r.authorUri
+          ? '<a class="name" href="' + esc(r.authorUri) + '" target="_blank" rel="noopener nofollow">' + esc(r.authorName) + '</a>'
+          : '<span class="name">' + esc(r.authorName) + '</span>';
+        const meta = [r.relativeTime, r.translated ? 'translated by Google' : '']
+          .filter(Boolean).join(' &middot; ');
+        const link = r.reviewUri
+          ? '<a class="where" href="' + esc(r.reviewUri) + '" target="_blank" rel="noopener nofollow">' + esc(meta || 'View on Google') + '</a>'
+          : '<span class="where">' + esc(meta) + '</span>';
+
+        return '<div class="t-card">'
+          + '<div class="t-stars" role="img" aria-label="' + esc(r.rating || 5) + ' out of 5 stars">' + stars + '</div>'
+          + '<p class="t-quote">&ldquo;' + esc(r.text) + '&rdquo;</p>'
+          + '<div class="t-author"><div class="avi" aria-hidden="true">' + avi + '</div>'
+          + '<div class="who">' + nameEl + link + '</div></div>'
+          + '</div>';
+      }).join('');
+
+      if (note) {
+        const bits = ['Reviews are shown as Google orders them and are not verified by Google.'];
+        if (data.googleMapsUri) {
+          bits.push('<a href="' + esc(data.googleMapsUri) + '" target="_blank" rel="noopener nofollow">Read all reviews on Google</a>.');
+        }
+        const flag = data.reviews.find((r) => r.flagContentUri);
+        if (flag) {
+          bits.push('<a href="' + esc(flag.flagContentUri) + '" target="_blank" rel="noopener nofollow">Report a review</a>.');
+        }
+        note.innerHTML = bits.join(' ');
+        note.hidden = false;
+      }
+    }
+
+    if (REVIEWS_LIVE) loadGoogleReviews();
+
   </script>
 </body>
 </html>
