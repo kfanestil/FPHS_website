@@ -1033,6 +1033,15 @@
       .footer-grid   { grid-template-columns: 1fr 1fr; }
       section        { padding: var(--s-7) 0; }
     }
+    /* Header fits down to 320px: tighter gaps under 420, and under 340 the
+       CTA steps aside since the mobile menu already carries it. */
+    @media (max-width: 420px) {
+      .nav-inner { gap: var(--s-3); }
+      .nav-right { gap: var(--s-2); }
+    }
+    @media (max-width: 340px) {
+      .nav-cta { display: none; }
+    }
     @media (max-width: 600px) {
       /* The header needs 380px of content in a 342px container at 390px wide,
          which pushed the hamburger off the right edge. Short label plus tighter
