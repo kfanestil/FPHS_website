@@ -1079,6 +1079,60 @@
     .delay-8 { animation-delay: 560ms; }
     .delay-9 { animation-delay: 640ms; }
 
+    /* Before / after — job walkthrough */
+    .beforeafter { background: var(--paper); border-top: 1px solid var(--line-1); }
+    .ba-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--s-5);
+    }
+    .ba-step {
+      margin: 0;
+      position: relative;
+      border-radius: var(--r-4);
+      overflow: hidden;
+      border: 1px solid var(--line-1);
+      box-shadow: var(--shadow-1);
+      background: var(--paper);
+      transition: box-shadow var(--dur-2) var(--ease-out), transform var(--dur-2) var(--ease-out);
+    }
+    .ba-step:hover { box-shadow: var(--shadow-3); transform: translateY(-4px); }
+    .ba-step img {
+      display: block;
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+    }
+    .ba-tag {
+      position: absolute;
+      top: var(--s-4);
+      left: var(--s-4);
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: var(--t-micro);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      border-radius: var(--r-pill);
+      background: rgba(27,35,44,.82);
+      color: var(--fg-on-navy);
+    }
+    .ba-tag-after { background: var(--brand-orange); color: #FFFFFF; }
+    .ba-caption {
+      padding: var(--s-3) var(--s-4);
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .02em;
+      color: var(--ink-700);
+      background: var(--paper);
+      border-top: 1px solid var(--line-1);
+    }
+    @media (max-width: 760px) {
+      .ba-steps { grid-template-columns: 1fr; }
+      .ba-step img { height: 260px; }
+    }
+
     /* Our Work gallery — asymmetric masonry layout */
     .gallery { background: var(--bone-deep); border-top: 1px solid var(--line-1); }
     .gallery-grid {
@@ -1104,6 +1158,13 @@
     .gallery-item:nth-child(7) { grid-column: span 3; }
     .gallery-item:nth-child(8) { grid-column: span 2; }
     .gallery-item:nth-child(9) { grid-column: span 2; }
+    .gallery-item:nth-child(10) { grid-column: span 2; }
+    .gallery-item:nth-child(11) { grid-column: span 2; }
+    .gallery-item:nth-child(12) { grid-column: span 3; }
+    .gallery-item:nth-child(13) { grid-column: span 3; }
+    /* Newer tiles run a fixed image band so portrait and landscape shots
+       sit in rows of equal height instead of over-cropping each other. */
+    .gallery-item:nth-child(n+10) img { height: 360px; min-height: 0; }
     .gallery-item img {
       display: block;
       width: 100%;
@@ -1137,6 +1198,10 @@
       .gallery-item:nth-child(7) { grid-column: span 2; }
       .gallery-item:nth-child(8) { grid-column: span 2; }
       .gallery-item:nth-child(9) { grid-column: span 2; }
+      .gallery-item:nth-child(10) { grid-column: span 2; }
+      .gallery-item:nth-child(11) { grid-column: span 2; }
+      .gallery-item:nth-child(12) { grid-column: span 2; }
+      .gallery-item:nth-child(13) { grid-column: span 2; }
     }
     @media (max-width: 600px) {
       .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: var(--s-4); }
@@ -1271,6 +1336,8 @@
                    alt="TV mounted above fireplace, cables fully hidden" width="1200" height="900" loading="lazy">
               <img class="photo-slide" src="assets/photos/tv-mount-prep.jpg"
                    alt="Wall prep for TV mount — backing boards and cable routing in progress" width="900" height="1200" loading="lazy">
+              <img class="photo-slide" src="assets/photos/fence-complete.jpg"
+                   alt="Completed white vinyl privacy fence with gate" width="1600" height="1200" loading="lazy">
               <div class="photo-badge">Available this week</div>
               <div class="photo-float">
                 <div class="avi">JD</div>
@@ -1430,6 +1497,45 @@
     </section>
 
     <!-- ================================================================
+         BEFORE / AFTER
+         ================================================================ -->
+    <section class="beforeafter" id="before-after" aria-labelledby="ba-heading">
+      <div class="container">
+        <div class="sec-head">
+          <span class="eyebrow">Start to finish</span>
+          <h2 id="ba-heading">One job, three photos.</h2>
+          <p>
+            A failed wood fence line, torn out and replaced with white vinyl privacy
+            panels and a gate. Same yard, same angle, start to finish.
+          </p>
+        </div>
+        <div class="ba-steps">
+          <figure class="ba-step">
+            <img src="assets/photos/fence-before.jpg"
+                 alt="Side yard before the job: old wood fence panels down and stacked along the property line"
+                 loading="lazy" width="1600" height="1200">
+            <span class="ba-tag">Before</span>
+            <figcaption class="ba-caption">Old fence down, line cleared</figcaption>
+          </figure>
+          <figure class="ba-step">
+            <img src="assets/photos/fence-in-progress.jpg"
+                 alt="Vinyl fence posts set in concrete with the first rail installed"
+                 loading="lazy" width="1600" height="1200">
+            <span class="ba-tag">During</span>
+            <figcaption class="ba-caption">Posts set, rails going in</figcaption>
+          </figure>
+          <figure class="ba-step">
+            <img src="assets/photos/fence-complete.jpg"
+                 alt="Finished white vinyl privacy fence with a matching gate"
+                 loading="lazy" width="1600" height="1200">
+            <span class="ba-tag ba-tag-after">After</span>
+            <figcaption class="ba-caption">Vinyl privacy fence and gate, done</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
          OUR WORK
          ================================================================ -->
     <section class="gallery" id="our-work" aria-labelledby="gallery-heading">
@@ -1493,6 +1599,30 @@
                  alt="Treehouse platform framing under construction in Central Florida backyard"
                  loading="lazy" width="1200" height="900">
             <div class="gallery-caption">Treehouse — mid-build</div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/photos/instant-hot-water-dispenser.jpg"
+                 alt="Chrome instant hot water dispenser installed at a stainless kitchen sink"
+                 loading="lazy" width="1200" height="1600">
+            <div class="gallery-caption">Instant hot water dispenser</div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/photos/grow-tent-assembly.jpg"
+                 alt="Grow tent assembled and standing in a bedroom"
+                 loading="lazy" width="1200" height="1600">
+            <div class="gallery-caption">Grow tent assembly</div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/photos/shower-fixture-install.jpg"
+                 alt="New shower head and handheld sprayer installed on tiled shower wall"
+                 loading="lazy" width="1600" height="1200">
+            <div class="gallery-caption">Shower fixture install</div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/photos/fitness-equipment-assembly.jpg"
+                 alt="Vibration plate exercise machine assembled and set up in a bedroom"
+                 loading="lazy" width="1200" height="1600">
+            <div class="gallery-caption">Fitness equipment assembly</div>
           </div>
         </div>
       </div>
