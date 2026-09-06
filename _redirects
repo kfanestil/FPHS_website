@@ -1,0 +1,6 @@
+# Retired Tampa Bay location pages -> nearest live equivalent (2026-09-06)
+/locations/tampa-handyman      /handyman-orlando   301
+/locations/tampa-handyman/     /handyman-orlando   301
+/locations/clearwater-handyman  /handyman-orlando  301
+/locations/clearwater-handyman/ /handyman-orlando  301
+/_archive/*                     /                  301
