@@ -23,6 +23,7 @@
 
   <!-- Lucide icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="/assets/site.js" defer></script>
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
@@ -114,30 +115,8 @@
   }
   </script>
 
+  <link rel="stylesheet" href="/assets/site.css">
   <style>
-    :root {
-      --brand-navy: #2C3E50;
-      --brand-navy-deep: #1F2D3A;
-      --brand-orange: #ED7D31;
-      --brand-orange-deep: #C9621A;
-      --brand-orange-soft: #FBD9BD;
-      --bone: #F8F5F0;
-      --bone-deep: #EFEAE1;
-      --paper: #FFFFFF;
-      --ink-900: #1B232C;
-      --ink-700: #3A4754;
-      --ink-500: #6A7785;
-      --fg-on-navy: #F8F5F0;
-      --line-1: rgba(44,62,80,.12);
-      --font-display: 'Archivo Black', sans-serif;
-      --font-body: 'DM Sans', sans-serif;
-      --s-1:4px; --s-2:8px; --s-3:12px; --s-4:16px; --s-5:24px;
-      --s-6:32px; --s-7:48px; --s-8:64px; --s-9:96px; --s-10:128px;
-      --r-1:4px; --r-2:8px; --r-3:12px; --r-4:16px; --r-pill:999px;
-      --shadow-1: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
-      --shadow-2: 0 4px 12px rgba(0,0,0,.10), 0 2px 4px rgba(0,0,0,.06);
-      --dur-1: 160ms;
-    }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -414,8 +393,9 @@
             <li><a href="/#quote">Get a quote</a></li>
           </ul>
           <div class="nav-right">
+            <a href="sms:9044687667" class="nav-phone" aria-label="Text us">Text</a>
             <a href="tel:9044687667" class="nav-phone">(904) 468-7667</a>
-            <a href="/#quote" class="btn btn-primary" style="padding:10px 20px;font-size:13px;">Get a quote</a>
+            <a href="/#quote" class="btn btn-primary nav-cta">Get a quote</a>
             <button class="nav-toggle" id="nav-toggle" aria-controls="nav-mobile" aria-expanded="false" aria-label="Open menu">
               <i data-lucide="menu" width="22" height="22"></i>
             </button>
@@ -582,7 +562,7 @@
 
               <div class="faq-item">
                 <p class="faq-q">What areas does Fanny Pack Home Services serve?</p>
-                <p class="faq-a">We serve Central Florida including <a href="/handyman-orlando">Orlando</a>, <a href="/handyman-altamonte-springs">Altamonte Springs</a>, <a href="/handyman-sanford">Sanford</a>, <a href="/handyman-kissimmee">Kissimmee</a>, <a href="/handyman-mt-dora">Mt. Dora</a>, <a href="/handyman-zellwood">Zellwood</a>, <a href="/locations/longwood-handyman">Longwood</a>, Lake Mary, Winter Garden, Maitland, Lake Nona, <a href="/locations/clearwater-handyman">Clearwater</a>, <a href="/locations/tampa-handyman">Tampa</a>, and surrounding communities. No travel fees within our service area.</p>
+                <p class="faq-a">We serve Central Florida including <a href="/handyman-orlando">Orlando</a>, <a href="/handyman-altamonte-springs">Altamonte Springs</a>, <a href="/handyman-sanford">Sanford</a>, <a href="/handyman-kissimmee">Kissimmee</a>, <a href="/handyman-mt-dora">Mt. Dora</a>, <a href="/handyman-zellwood">Zellwood</a>, <a href="/locations/longwood-handyman">Longwood</a>, Lake Mary, Winter Garden, Maitland, Lake Nona, <a href="/handyman-orlando">Clearwater</a>, <a href="/handyman-orlando">Tampa</a>, and surrounding communities. No travel fees within our service area.</p>
               </div>
 
               <div class="faq-item">
@@ -681,8 +661,6 @@
             <li><a href="/handyman-mt-dora">Mt. Dora</a></li>
             <li><a href="/handyman-zellwood">Zellwood</a></li>
             <li><a href="/locations/longwood-handyman">Longwood</a></li>
-            <li><a href="/locations/clearwater-handyman">Clearwater</a></li>
-            <li><a href="/locations/tampa-handyman">Tampa</a></li>
           </ul>
         </div>
         <div class="footer-col footer-contact">
@@ -739,5 +717,10 @@
     })();
   </script>
 
+  <nav class="actionbar" aria-label="Quick contact">
+    <a href="tel:9044687667"><i data-lucide="phone" width="15" height="15"></i>Call</a>
+    <a href="sms:9044687667"><i data-lucide="message-square" width="15" height="15"></i>Text</a>
+    <a href="/#quote" class="primary"><i data-lucide="calendar-check" width="15" height="15"></i>Free estimate</a>
+  </nav>
 </body>
 </html>
