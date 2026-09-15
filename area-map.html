@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Fanny Pack Home Services — service area</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
+<style>
+  html, body { margin: 0; padding: 0; height: 100%; background: #EFEAE1; }
+  #map { position: absolute; inset: 0; background: #EFEAE1; }
+  .leaflet-tile-pane { filter: saturate(.52) contrast(.94) brightness(1.04); }
+  .leaflet-container { font-family: "DM Sans", "Helvetica Neue", Arial, sans-serif; background: #EFEAE1; }
+  .leaflet-control-attribution { font-size: 10px; background: rgba(248,245,240,.86); color: #6A7785; }
+  .leaflet-control-attribution a { color: #3A4754; }
+  .pin {
+    width: 12px; height: 12px; border-radius: 999px;
+    background: #ED7D31; border: 2px solid #F8F5F0;
+    box-shadow: 0 1px 4px rgba(27,35,44,.45);
+  }
+  .pin.hq { width: 18px; height: 18px; background: #2C3E50; border-color: #ED7D31; }
+  .city-label {
+    font-size: 11px; font-weight: 700; letter-spacing: .04em;
+    color: #1B232C; text-shadow: 0 1px 0 rgba(248,245,240,.95), 0 0 6px rgba(248,245,240,.95);
+    white-space: nowrap;
+  }
+</style>
+</head>
+<body>
+<div id="map" role="img" aria-label="Map of the Fanny Pack Home Services service area across Orange, Seminole, Lake, and Osceola counties in Central Florida"></div>
+<script>
+  var cities = [
+    { name: 'Altamonte Springs', lat: 28.6871, lng: -81.3956, hq: true },
+    { name: 'Orlando',           lat: 28.5383, lng: -81.3792 },
+    { name: 'Sanford',           lat: 28.8003, lng: -81.2731 },
+    { name: 'Longwood',          lat: 28.7031, lng: -81.3384 },
+    { name: 'Lake Mary',         lat: 28.7589, lng: -81.3178 },
+    { name: 'Winter Park',       lat: 28.5999, lng: -81.3392 },
+    { name: 'Oviedo',            lat: 28.6700, lng: -81.2081 },
+    { name: 'Apopka',            lat: 28.6934, lng: -81.5322 },
+    { name: 'Winter Garden',     lat: 28.5653, lng: -81.5862 },
+    { name: 'Kissimmee',         lat: 28.2920, lng: -81.4076 },
+    { name: 'Mt. Dora',          lat: 28.8025, lng: -81.6445 },
+    { name: 'Zellwood',          lat: 28.7361, lng: -81.6009 }
+  ];
+
+  var map = L.map('map', {
+    center: [28.60, -81.40],
+    zoom: 9,
+    scrollWheelZoom: false,
+    zoomControl: true
+  });
+
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors',
+    maxZoom: 18
+  }).addTo(map);
+
+  L.circle([28.6871, -81.3956], {
+    radius: 48000,
+    color: '#ED7D31',
+    weight: 1.5,
+    opacity: .75,
+    fillColor: '#ED7D31',
+    fillOpacity: .07,
+    dashArray: '5 5'
+  }).addTo(map);
+
+  var bounds = [];
+  cities.forEach(function (c) {
+    bounds.push([c.lat, c.lng]);
+    L.marker([c.lat, c.lng], {
+      icon: L.divIcon({
+        className: '',
+        html: '<div class="pin' + (c.hq ? ' hq' : '') + '"></div>',
+        iconSize: c.hq ? [18, 18] : [12, 12],
+        iconAnchor: c.hq ? [9, 9] : [6, 6]
+      }),
+      keyboard: false
+    }).addTo(map).bindTooltip(c.name, {
+      permanent: true,
+      direction: 'right',
+      offset: [8, 0],
+      className: 'city-label',
+      opacity: 1
+    });
+  });
+
+  map.fitBounds(bounds, { padding: [46, 46] });
+</script>
+</body>
+</html>
