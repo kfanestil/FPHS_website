@@ -70,27 +70,6 @@
     .fade-in-up.delay-2 { animation-delay: 160ms; }
     .fade-in-up.delay-3 { animation-delay: 240ms; }
     .fade-in-up.delay-4 { animation-delay: 320ms; }
-    /* NAV */
-    .nav { position: sticky; top: 0; z-index: 100; background: var(--brand-navy); border-bottom: 1px solid rgba(255,255,255,.06); }
-    .nav-inner { height: 72px; display: flex; align-items: center; justify-content: space-between; gap: var(--s-5); }
-    .nav-brand { display: flex; align-items: center; gap: var(--s-3); text-decoration: none; flex-shrink: 0; }
-    .nav-mark { width: 38px; height: 38px; border-radius: 999px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .nav-wordmark strong { display: block; font-family: var(--font-display); text-transform: uppercase; font-size: 17px; letter-spacing: .02em; line-height: 1; color: var(--fg-on-navy); }
-    .nav-wordmark small { display: block; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: rgba(248,245,240,.55); margin-top: 3px; }
-    .nav-links { display: flex; gap: var(--s-7); list-style: none; align-items: center; }
-    .nav-links a { color: var(--fg-on-navy); text-decoration: none; font-weight: 600; font-size: 14px; transition: color var(--dur-1) var(--ease-out); }
-    .nav-links a:hover { color: var(--brand-orange); }
-    .nav-right { display: flex; align-items: center; gap: var(--s-4); flex-shrink: 0; }
-    .nav-phone { font-family: var(--font-mono); font-size: 13px; color: rgba(248,245,240,.8); text-decoration: none; transition: color var(--dur-1); }
-    .nav-phone:hover { color: var(--brand-orange); }
-    .nav-toggle { display: none; background: none; border: none; color: var(--fg-on-navy); cursor: pointer; padding: 6px; border-radius: var(--r-2); }
-    .nav-toggle:hover { background: rgba(255,255,255,.08); }
-    .nav-mobile { display: none; background: var(--brand-navy-deep); border-top: 1px solid rgba(255,255,255,.08); }
-    .nav-mobile.open { display: block; }
-    .nav-mobile ul { list-style: none; padding: var(--s-3) 0 var(--s-2); }
-    .nav-mobile a { display: block; padding: 14px var(--s-5); color: var(--fg-on-navy); text-decoration: none; font-weight: 600; font-size: 15px; }
-    .nav-mobile a:hover { color: var(--brand-orange); }
-    .nav-mobile .mobile-cta { padding: var(--s-2) var(--s-5) var(--s-4); }
     /* HERO */
     .loc-hero { background: var(--brand-navy); padding: var(--s-9) 0; }
     .loc-hero .eyebrow { color: var(--brand-orange); }
@@ -147,36 +126,15 @@
     .q-success { text-align: center; padding: var(--s-8) var(--s-5); }
     .q-success h3 { font-size: var(--t-h3); color: var(--ink-900); margin-bottom: var(--s-3); }
     .q-success p { color: var(--ink-700); margin-bottom: var(--s-5); }
-    /* FOOTER */
-    .footer { background: var(--brand-navy-deep); padding: var(--s-9) 0 var(--s-7); }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.4fr; gap: var(--s-8); padding-bottom: var(--s-7); border-bottom: 1px solid rgba(255,255,255,.08); margin-bottom: var(--s-6); }
-    .footer-brand .f-mark { width: 44px; height: 44px; border-radius: 999px; background: var(--brand-orange); display: flex; align-items: center; justify-content: center; color: #fff; margin-bottom: var(--s-3); }
-    .footer-brand .f-wm { display: block; font-family: var(--font-display); text-transform: uppercase; font-size: 18px; letter-spacing: .02em; color: var(--fg-on-navy); line-height: 1; }
-    .footer-brand .f-sub { display: block; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: rgba(248,245,240,.45); margin-top: 4px; margin-bottom: var(--s-4); }
-    .footer-brand .blurb { font-size: 14px; line-height: 1.6; color: rgba(248,245,240,.62); max-width: 34ch; }
-    .footer-col h4 { font-family: var(--font-body); font-weight: 700; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--brand-orange); margin-bottom: var(--s-4); }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .footer-col li a { color: rgba(248,245,240,.72); text-decoration: none; font-size: 14px; transition: color var(--dur-1); }
-    .footer-col li a:hover { color: var(--brand-orange); }
-    .footer-contact .phone { font-family: var(--font-mono); font-size: 17px; font-weight: 500; color: var(--fg-on-navy); text-decoration: none; display: block; margin-bottom: var(--s-2); }
-    .footer-contact .phone:hover { color: var(--brand-orange); }
-    .footer-contact .area { margin-top: var(--s-4); font-size: 13px; color: rgba(248,245,240,.45); line-height: 1.5; }
-    .footer-colophon { display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 12px; letter-spacing: .04em; color: rgba(248,245,240,.38); flex-wrap: wrap; gap: var(--s-3); }
-    .footer-colophon a { color: rgba(248,245,240,.38); text-decoration: none; }
-    .footer-colophon a:hover { color: var(--brand-orange); }
     /* RESPONSIVE */
     @media (max-width: 960px) {
-      .nav-links, .nav-phone { display: none; }
-      .nav-toggle { display: flex; }
       .loc-intro-grid { grid-template-columns: 1fr; }
       .services-grid { grid-template-columns: repeat(2, 1fr); }
       .loc-map-grid { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
       section { padding: var(--s-7) 0; }
     }
     @media (max-width: 600px) {
       .services-grid { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; }
       .loc-hero-cta { flex-direction: column; align-items: flex-start; }
       .q-grid { grid-template-columns: 1fr; }
       .q-footer { flex-direction: column; align-items: flex-start; }
@@ -218,45 +176,44 @@
 </head>
 <body>
 
-  <header>
-    <nav class="nav" id="site-nav" aria-label="Main navigation">
-      <div class="container">
-        <div class="nav-inner">
-          <a href="/" class="nav-brand" aria-label="Fanny Pack Home Services — home">
-            <div class="nav-mark" aria-hidden="true">
-              <img src="assets/logo-circle.png" alt="Fanny Pack Home Services logo" width="38" height="38" style="border-radius:999px;object-fit:cover;display:block;">
-            </div>
-            <div class="nav-wordmark">
-              <strong>Fanny Pack</strong>
-              <small>Home Services</small>
-            </div>
-          </a>
-          <ul class="nav-links" role="list">
-            <li><a href="#services">Services</a></li>
-            <li><a href="/#how-it-works">How it works</a></li>
-            <li><a href="#quote">Get a quote</a></li>
-          </ul>
-          <div class="nav-right">
-            <a href="sms:9044687667" class="nav-phone" aria-label="Text us">Text</a>
-            <a href="tel:9044687667" class="nav-phone">(904) 468-7667</a>
-            <a href="#quote" class="btn btn-primary nav-cta">Get a quote</a>
-            <button class="nav-toggle" id="nav-toggle" aria-controls="nav-mobile" aria-expanded="false" aria-label="Open menu">
-              <i data-lucide="menu" width="22" height="22"></i>
-            </button>
-          </div>
-        </div>
+  <div class="hv3-60">
+    <div class="hv3-61">
+      <span class="hv3-62">
+        <span class="hv3-63"></span>
+        BOOKING THIS WEEK IN ORANGE, SEMINOLE &amp; LAKE COUNTY
+      </span>
+      <span class="hv3-64">
+        <span>MON&ndash;FRI 8&ndash;6 &middot; SAT 9&ndash;3</span>
+        <a class="hv3-65" href="tel:9044687667">(904) 468-7667</a>
+      </span>
+    </div>
+  </div>
+
+  <header class="hv3-66" id="site-header">
+    <div class="hv3-67">
+      <div class="hv3-68">
+        <a class="hv3-69" href="/#top">
+          <img class="hv3-70" src="/assets/logo-circle.png" alt="Fanny Pack Home Services" width="56" height="56">
+          <span class="hv3-24">
+            <span class="hv3-71">Fanny Pack</span>
+            <span class="hv3-72">Home Services</span>
+          </span>
+        </a>
+        <div class="hv3-73"></div>
+        <a class="hv3-74" href="tel:9044687667">
+          <i data-lucide="phone" width="16" height="16"></i>
+          <span>Call now</span>
+        </a>
       </div>
-    </nav>
-    <div class="nav-mobile" id="nav-mobile" aria-hidden="true">
-      <ul>
-        <li><a href="#services" class="mobile-link">Services</a></li>
-        <li><a href="/#how-it-works" class="mobile-link">How it works</a></li>
-        <li><a href="#quote" class="mobile-link">Get a quote</a></li>
-        <li><a href="tel:9044687667" class="mobile-link">(904) 468-7667</a></li>
-      </ul>
-      <div class="mobile-cta">
-        <a href="#quote" class="btn btn-primary mobile-link" style="width:100%;justify-content:center;">Get a free estimate</a>
-      </div>
+      <nav class="hv3-75" aria-label="Sections">
+        <a class="hv3-11" href="/#services">Services</a>
+        <a class="hv3-11" href="/#pricing">Pricing</a>
+        <a class="hv3-11" href="/#book">Book a visit</a>
+        <a class="hv3-11" href="/#work">Our work</a>
+        <a class="hv3-11" href="/#reviews">Reviews</a>
+        <a class="hv3-11" href="/#areas">Service area</a>
+        <a class="hv3-11" href="#quote">Get a quote</a>
+      </nav>
     </div>
   </header>
 
@@ -532,62 +489,72 @@
 
   </main>
 
-  <footer class="footer" aria-label="Site footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="f-mark" aria-hidden="true"><i data-lucide="wrench" width="20" height="20"></i></div>
-          <span class="f-wm">Fanny Pack</span>
-          <span class="f-sub">Home Services</span>
-          <p class="blurb">Honest pros. Reasonable price. Quality work. We show up when we say we will and fix it right the first time.</p>
+  <footer class="hv3-160">
+    <div class="hv3-13">
+      <div class="hv3-161">
+        <div class="hv3-8">
+          <img class="hv3-162" src="/assets/logo-circle.png" alt="Fanny Pack Home Services" width="46" height="46">
+          <span class="hv3-163">Fanny Pack</span>
+          <span class="hv3-164">Home Services</span>
+          <p class="hv3-165">
+            Handyman and home repair across Central Florida. The helping hand in
+            handyman: the same faces every visit, the price up front, and we come
+            back if it is not right.
+          </p>
         </div>
-        <div class="footer-col">
-          <h4>Services</h4>
-          <ul>
-            <li><a href="/services/christmas-light-hanging">Christmas lights</a></li>
-            <li><a href="/services/flooring-installation">Flooring</a></li>
-            <li><a href="/services/drywall-repair">Drywall repair</a></li>
-            <li><a href="/services/door-repair">Door repair</a></li>
-            <li><a href="/services/tv-mounting">TV mounting</a></li>
-            <li><a href="/services/appliance-installation">Appliance install</a></li>
-            <li><a href="/services/pool-cleaning">Pool cleaning</a></li>
-            <li><a href="/services/lawn-mowing">Lawn mowing</a></li>
-            <li><a href="/services/house-cleaning">House cleaning</a></li>
-            <li><a href="/services/garbage-disposal-repair">Disposal repair</a></li>
-            <li><a href="/services/appliance-repair">Appliance repair</a></li>
-            <li><a href="/services/fitness-equipment-assembly">Gym assembly</a></li>
-            <li><a href="/services/door-installation">Door installation</a></li>
-          </ul>
+
+        <div class="hv3-8">
+          <h4 class="hv3-39">Services</h4>
+          <div class="hv3-58">
+            <a class="hv3-1" href="/services/tv-mounting">TV mounting</a>
+            <a class="hv3-1" href="/services/drywall-repair">Drywall repair</a>
+            <a class="hv3-1" href="/services/door-repair">Door repair</a>
+            <a class="hv3-1" href="/services/flooring-installation">Flooring</a>
+            <a class="hv3-1" href="/services/appliance-installation">Appliance install</a>
+            <a class="hv3-1" href="/services/lawn-mowing">Lawn mowing</a>
+            <a class="hv3-1" href="/services/pool-cleaning">Pool cleaning</a>
+            <a class="hv3-1" href="/services/christmas-light-hanging">Christmas lights</a>
+            <a class="hv3-1" href="/services/appliance-repair">Appliance repair</a>
+            <a class="hv3-1" href="/services/door-installation">Door installation</a>
+            <a class="hv3-1" href="/services/garbage-disposal-repair">Garbage disposal</a>
+          </div>
         </div>
-        <div class="footer-col">
-          <h4>Service areas</h4>
-          <ul>
-            <li><a href="/handyman-orlando">Orlando</a></li>
-            <li><a href="/handyman-altamonte-springs">Altamonte Springs</a></li>
-            <li><a href="/handyman-sanford">Sanford</a></li>
-            <li><a href="/handyman-kissimmee">Kissimmee</a></li>
-            <li><a href="/handyman-mt-dora">Mt. Dora</a></li>
-            <li><a href="/handyman-zellwood">Zellwood</a></li>
-            <li><a href="/locations/longwood-handyman">Longwood</a></li>
-          </ul>
+
+        <div class="hv3-8">
+          <h4 class="hv3-39">Service area</h4>
+          <div class="hv3-58">
+            <a class="hv3-1" href="/handyman-orlando">Orlando</a>
+            <a class="hv3-1" href="/handyman-altamonte-springs">Altamonte Springs</a>
+            <a class="hv3-1" href="/handyman-sanford">Sanford</a>
+            <a class="hv3-1" href="/locations/longwood-handyman">Longwood</a>
+            <a class="hv3-1" href="/handyman-kissimmee">Kissimmee</a>
+            <a class="hv3-1" href="/handyman-mt-dora">Mt. Dora</a>
+            <a class="hv3-1" href="/handyman-zellwood">Zellwood</a>
+          </div>
         </div>
-        <div class="footer-col">
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="/blog/florida-handyman-license">FL license guide</a></li>
-            <li><a href="/blog/central-florida-home-maintenance-checklist">Maintenance checklist</a></li>
-          </ul>
-        </div>
-        <div class="footer-col footer-contact">
-          <h4>Contact</h4>
-          <a href="tel:9044687667" class="phone">(904) 468-7667</a>
-          <a href="mailto:hello@fannypackhs.com" style="color:rgba(248,245,240,.72);font-size:14px;text-decoration:none;">hello@fannypackhs.com</a>
-          <p class="area">Serving Orlando, Zellwood, Apopka,<br>and the surrounding areas.</p>
+
+        <div class="hv3-8">
+          <h4 class="hv3-39">Get in touch</h4>
+          <a class="hv3-166" href="tel:9044687667">(904) 468-7667</a>
+          <a class="hv3-167" href="mailto:hello@fannypackhs.com">hello@fannypackhs.com</a>
+          <p class="hv3-168">Based near Lake Brantley High School<br>Altamonte Springs, FL</p>
+          <p class="hv3-169">Mon to Fri, 8 to 6<br>Saturday, 9 to 3</p>
+          <div class="hv3-170">
+            <a class="hv3-40" href="tel:9044687667" aria-label="Call"><i data-lucide="phone" width="17" height="17"></i></a>
+            <a class="hv3-40" href="sms:9044687667" aria-label="Text"><i data-lucide="message-square" width="17" height="17"></i></a>
+            <a class="hv3-40" href="mailto:hello@fannypackhs.com" aria-label="Email"><i data-lucide="mail" width="17" height="17"></i></a>
+          </div>
         </div>
       </div>
-      <div class="footer-colophon">
-        <span>&copy; <span id="year"></span> Fanny Pack Home Services LLC. All rights reserved.</span>
-        <span><a href="#">Privacy policy</a> &nbsp;&middot;&nbsp; <a href="#">Terms of service</a></span>
+
+      <div class="hv3-171">
+        <span>&copy; <span id="year"></span> Fanny Pack Home Services LLC</span>
+        <span class="hv3-172">
+          <a class="hv3-41" href="/blog/central-florida-home-maintenance-checklist">Maintenance checklist</a>
+          <a class="hv3-41" href="/blog/florida-handyman-license">Florida licensing</a>
+          <a class="hv3-41" href="/#pricing">Pricing</a>
+          <a class="hv3-41" href="/faq">FAQ</a>
+        </span>
       </div>
     </div>
   </footer>
@@ -595,11 +562,12 @@
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <script src="/assets/site.js" defer></script>
   <script src="https://unpkg.com/@formspree/ajax@1"></script>
-  <script>
+  <script>/* dead: the mobile drawer was removed with the v3 chrome (2026-09-18). These lookups are shimmed so the rest of this block still runs. */
+
     lucide.createIcons();
     document.getElementById('year').textContent = new Date().getFullYear();
-    const toggle = document.getElementById('nav-toggle');
-    const mobileNav = document.getElementById('nav-mobile');
+    const toggle = (document.getElementById('nav-toggle') || document.createElement('button'));
+    const mobileNav = (document.getElementById('nav-mobile') || document.createElement('div'));
     const menuIcon = toggle.querySelector('i');
     toggle.addEventListener('click', () => {
       const open = mobileNav.classList.toggle('open');
