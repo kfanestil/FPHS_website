@@ -1751,4 +1751,7 @@ body.home-v3{font-family:"DM Sans","Helvetica Neue",Arial,sans-serif;color:#3A47
 :where(body.home-v3) a:hover{color:#C9621A;}
 :where(body.home-v3) ::selection{background:#FBD9BD;color:#1B232C;}
 :where(body.home-v3) :focus-visible{outline:2px solid #ED7D31;outline-offset:3px;}
+/* The v3 chrome is sticky and now sits on every page, so anchor jumps need
+   clearing on all of them, not just the homepage. (2026-09-18) */
+html{scroll-padding-top:150px;}
 html:has(body.home-v3){scroll-padding-top:160px;}
