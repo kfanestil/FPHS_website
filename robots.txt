@@ -24,8 +24,8 @@ User-agent: Applebot-Extended
 Allow: /
 
 # Sitemap
-Sitemap: https://fannypackhomeservices.com/sitemap.xml
+Sitemap: https://fanny-pack.net/sitemap.xml
 
 # LLM context files
-# https://fannypackhomeservices.com/llms.txt
-# https://fannypackhomeservices.com/llms-full.txt
+# https://fanny-pack.net/llms.txt
+# https://fanny-pack.net/llms-full.txt
